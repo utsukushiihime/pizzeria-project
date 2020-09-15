@@ -1,0 +1,7 @@
+** Planning
+
+
+// Authentication
+// What do we want in the models
+// decide what we'll put into the mode
+// features
