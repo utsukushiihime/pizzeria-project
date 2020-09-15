@@ -14,7 +14,6 @@ Pizza Planet - Theme
     // salads
     // desserts
 
-
 // Navigation
     // search
         // merch 
@@ -35,4 +34,35 @@ Pizza Planet - Theme
             // address and payments
             // rewards
 
-    
+// MVP Dine-in Only
+// models
+user
+ name - String - Required
+ email - String - Required
+ address - String - Optional
+ phone - Number (validate numbers only)
+
+Pizza
+    crust - String
+    sauce - String
+    toppings - String
+    cuts - String
+    size - String
+    price - Number
+    createTime - createdAt
+drinks
+    sizes - Number
+    non-alcoholic - String
+    price - Number
+sides
+    salads - String
+    wings - String
+    fries - String
+    onion rings - String
+    price - Number
+desserts
+    cinnamon sticks - String
+    churros - String
+    planet sized cookie - String
+    brownies - String
+    price - Number
