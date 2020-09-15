@@ -1,0 +1,23 @@
+{
+  "name": "pizzeria",
+  "version": "1.0.0",
+  "description": "pizzeria, node, mongoose, mongo, express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "mongoose",
+    "mongo",
+    "express"
+  ],
+  "author": "Dylan and Crystal",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.10.5"
+  }
+}
