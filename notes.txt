@@ -42,7 +42,7 @@ user
  address - String - Optional
  phone - Number (validate numbers only)
 
-Pizza
+pizza
     crust - String
     sauce - String
     toppings - String
