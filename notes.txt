@@ -1,7 +1,38 @@
 ** Planning
 
-
+Pizza Planet - Theme
 // Authentication
 // What do we want in the models
 // decide what we'll put into the mode
 // features
+    // toppings
+        // sizes
+        // gluten free
+        // dairy free
+    // sides
+    // drinks
+    // salads
+    // desserts
+
+
+// Navigation
+    // search
+        // merch 
+        // cart calculations
+    // main - Landing page
+    // contact 
+    // online orders
+    // user area
+        // user details
+        // username
+        // user email
+        // user address
+        // user phone number
+        // payment info
+            // user favorites
+            // saving user data
+            // prepopulated
+            // address and payments
+            // rewards
+
+    
