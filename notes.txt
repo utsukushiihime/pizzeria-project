@@ -73,3 +73,12 @@ desserts
     planet sized cookie - String
     brownies - String
     price - Number
+user accounts 
+    information storage 
+    payment storage 
+    login status 
+    reward point count
+order archive 
+    search & access via order id 
+    link specific order id with specific user account 
+    
