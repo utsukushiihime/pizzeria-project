@@ -49,7 +49,7 @@ pizza
     cuts - String
     size - String
     price - Number
-    createTime - createdAt
+    timestamps - createdAt
 drinks
     sizes - Number
     non-alcoholic - String
