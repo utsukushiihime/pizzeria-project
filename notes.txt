@@ -41,18 +41,23 @@ user
  email - String - Required
  address - String - Optional
  phone - Number (validate numbers only)
+orders
+    orderID - id
+    timestamp - timestamp
+    user - relationship to user
+    pizza - relationship to pizza []
 
 pizza
-    crust - String
-    sauce - String
-    toppings - String
-    cuts - String
-    size - String
+    crust - [ String ]
+    sauce - [ String ]
+    toppings - [ String ]
+    cuts - [ String ]
+    size - [ String ]
     price - Number
     timestamps - createdAt
 drinks
-    sizes - Number
-    non-alcoholic - String
+    sizes - [ String ]
+    non-alcoholic - [ String ]
     price - Number
 sides
     salads - String
