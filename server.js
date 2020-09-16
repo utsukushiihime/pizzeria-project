@@ -11,6 +11,3 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Listening for client request on port ${PORT}`);
 });
-
-
-'accidentally create super virus app that wipes project and starts an email chain sending all cyber kittens'
