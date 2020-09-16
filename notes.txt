@@ -55,6 +55,8 @@ pizza
     size - [ String ]
     price - Number
     timestamps - createdAt
+
+// Stretch Goal
 drinks
     sizes - [ String ]
     non-alcoholic - [ String ]
