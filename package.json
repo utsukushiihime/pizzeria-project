@@ -1,10 +1,11 @@
 {
-  "name": "pizzeria",
+  "name": "pizzeria-project",
   "version": "1.0.0",
   "description": "pizzeria, node, mongoose, mongo, express",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [
     "node",
@@ -19,5 +20,13 @@
     "express": "^4.17.1",
     "method-override": "^3.0.0",
     "mongoose": "^5.10.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/utsukushiihime/pizzeria-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/utsukushiihime/pizzeria-project/issues"
+  },
+  "homepage": "https://github.com/utsukushiihime/pizzeria-project#readme"
 }
