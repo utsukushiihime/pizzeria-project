@@ -2,8 +2,8 @@
 
 MVP (bare-bone basics)
 -	user can access application
--	user can select a pizza from menu options 
--	user can input data (profile information) for purchasing / placing order 
+-	user selects pizza from menu options 
+-	user inputs data (profile information) for purchasing / placing order while simultaneously creating a profile
 
 To qualify for approval tomorrow you will need to provide the following:
 Planning Material Requirements
