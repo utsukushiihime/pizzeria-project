@@ -84,8 +84,7 @@ During checkout, the user will input identification and contact information such
 
 ### ERD - Create your diagram to represent your database models and their connections
 
-![Track Order](public/images/Pizzeria.png)
-Track Order
+![ERD](public/images/Pizzeria.png)
 
 ---
 
