@@ -35,7 +35,7 @@ Pizza Planet - Space Theme
             // address and payments
             // rewards
 
-// MVP Dine-in Only, Delivery later
+// MVP Dine-in Only, Delivery available after MVP established
 // models
 user
  name - String - Required
@@ -88,4 +88,3 @@ order archive
     search & access via order id 
     link specific order id with specific user account 
     
-test test test test testing the test testy test it all 
