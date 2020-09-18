@@ -1,14 +1,15 @@
-** Planning
+** Planning **
 
-Pizza Planet - Theme
+Pizza Planet - Space Theme
 // Authentication
 // What do we want in the models
-// decide what we'll put into the mode
+// decide what we'll put into the models
 // features
     // toppings
-        // sizes
-        // gluten free
-        // dairy free
+    // sizes
+    // crust options
+    // gluten free
+    // dairy free
     // sides
     // drinks
     // salads
@@ -34,7 +35,7 @@ Pizza Planet - Theme
             // address and payments
             // rewards
 
-// MVP Dine-in Only
+// MVP Dine-in Only, Delivery later
 // models
 user
  name - String - Required
@@ -57,9 +58,13 @@ pizza
     timestamps - createdAt
 
 // Stretch Goal
+additional menu item customization
+additional pizza customization options 
 drinks
     sizes - [ String ]
     non-alcoholic - [ String ]
+    spiked - [ String ]
+    malts - [ String ]
     price - Number
 sides
     salads - String
@@ -71,13 +76,14 @@ desserts
     cinnamon sticks - String
     churros - String
     planet sized cookie - String
-    brownies - String
+    s'mores brownies - String
     price - Number
 user accounts 
     information storage 
     payment storage 
     login status 
     reward point count
+    current order delivery status & tracking
 order archive 
     search & access via order id 
     link specific order id with specific user account 
