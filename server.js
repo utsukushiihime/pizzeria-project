@@ -44,7 +44,7 @@ const authRequired = (req, res, next) => {
 
 // view routes
 app.get("/", (req, res) => {
-  res.send("index", { user: req.session.currentUser });
+  res.render("index", { user: req.session.currentUser });
 });
 
 // Auth Routes

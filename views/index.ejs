@@ -3,9 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index</title>
+    <title>Planet Pizza</title>
   </head>
   <body>
-    <h1>Index</h1>
+    <nav>
+      <h1>Pizzeria</h1>
+      <ul>
+        <li>
+          <a href="/tracker">Tracker</a>
+        </li>
+        <li>
+          <a href="/menu">Menu</a>
+        </li>
+      </ul>
+      <% if(user) { %>
+      <p>Welcome, <%= user.username %></p>
+      <form action="/logout?_method=DELETE" method="POST">
+        <input type="submit" value="Logout" />
+      </form>
+      <% } else { %>
+      <a href="/login">Login</a>
+      <a href="/register">Register</a>
+      <% } %>
+    </nav>
   </body>
 </html>
