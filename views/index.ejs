@@ -1,35 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Planet Pizza</title>
-  </head>
-  <body>
-    <nav>
-      <h1>Pizzeria</h1>
-      <ul>
-        <li>
-          <a href="/tracker">Tracker</a>
-        </li>
-        <li>
-          <a href="/menu">Menu</a>
-        </li>
-      </ul>
-      <% if(user) { %>
-      <p>Welcome, <%= user.username %></p>
+<%- include("partials/header.ejs") %>
+<nav>
+  <h1>Pizzeria</h1>
+  <ul>
+    <li>
+      <a href="/tracker">Tracker</a>
+    </li>
+    <li>
+      <a href="/menu">Menu</a>
+    </li>
+  </ul>
+  <% if(user) { %>
+  <p>Welcome, <%= user.username %></p>
 
-      TODO Work on user account view and edit
-      <a href="/auth/<% user._id %>"><%= user.id %></a>
-      <p></p>
+  TODO Work on user account view and edit
+  <a href="/auth/<% user._id %>"><%= user.id %></a>
+  <p></p>
 
-      <form action="/logout?_method=DELETE" method="POST">
-        <input type="submit" value="Logout" />
-      </form>
-      <% } else { %>
-      <a href="/login">Login</a>
-      <a href="/register">Register</a>
-      <% } %>
-    </nav>
-  </body>
-</html>
+  <form action="/logout?_method=DELETE" method="POST">
+    <input type="submit" value="Logout" />
+  </form>
+  <% } else { %>
+  <a href="/login">Login</a>
+  <a href="/register">Register</a>
+  <% } %>
+</nav>
+
+<%- include("partials/footer.ejs") %>
