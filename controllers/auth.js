@@ -26,11 +26,16 @@ router.get("/register", async (req, res) => {
     // redirect to login
     res.redirect("/login");
   } catch (error) {
-    res.send({ message: "internal Server Error", err: error });
+    res.send({ message: "Internal Server Error", err: error });
   }
 });
 
 // login form
+router.get("/login", (req, res) => {
+  res.render("auth/login");
+});
+
+// login post <- authentication
 router.get("/login", async (req, res) => {
   try {
     const foundUser = await db.User.findOne({ email: req.body.email });
