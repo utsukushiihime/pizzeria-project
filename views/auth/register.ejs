@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %>
+<h1>Register</h1>
+<form action="/register" method="POST">
+  <input type="text" name="username" placeholder="username" required />
+  <input type="email" name="email" placeholder="Email" required />
+  <input type="password" name="password" placeholder="Password" required />
+  <input type="text" name="address" placeholder="Address" required />
+  <input type="text" name="city" placeholder="City" required />
+  <input type="text" name="state" placeholder="State" required />
+  <input type="text" name="zip" placeholder="Zip" required />
+  <input type="text" name="ccNum" placeholder="Card Number" required />
+  <input type="text" name="ccv" placeholder="CCV" required />
+  <input type="text" name="expiry" placeholder="Expiration Date" required />
+
+  <input type="submit" value="Register" />
+</form>
+<%- include("partials/footer.ejs") %>

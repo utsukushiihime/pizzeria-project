@@ -1,6 +1,8 @@
 /* External Modules */
 const express = require("express");
 const methodOverride = require("method-override");
+const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
 
 /* Internal Modules */
 const db = require("./models");
@@ -17,11 +19,36 @@ app.set("view engine", "ejs");
 /* Middleware */
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+app.use(
+  session({
+    resave: false,
+    saveUninitialized: false,
+    secret: "PlanetPizzaPizzeria",
+    store: new MongoStore({
+      url: "mongodb://localhost:27017/blog-sessions",
+    }),
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24 * 7 * 2,
+    },
+  })
+);
+
+const authRequired = (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.redirect("/login");
+  }
+  next();
+};
 
 /* Routes */
+
+// view routes
 app.get("/", (req, res) => {
-  res.send("index");
+  res.render("index", { user: req.session.currentUser });
 });
+
+// Auth Routes
+app.use("/", controllers.auth);
 
 /* Server Listener */
 app.listen(PORT, () => {
