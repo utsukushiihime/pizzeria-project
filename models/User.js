@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema(
     password: { type: String, required: true },
     address: { type: String, required: true },
     city: { type: String, required: true },
+    state: { type: String, required: true },
     zip: { type: Number, required: true },
     ccNum: { type: Number, required: true },
     ccv: { type: Number, required: true },

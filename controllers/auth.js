@@ -59,6 +59,14 @@ router.post("/login", async (req, res) => {
     req.session.currentUser = {
       username: foundUser.username,
       id: foundUser._id,
+      email: foundUser.email,
+      address: foundUser.address,
+      city: foundUser.city,
+      state: foundUser.state,
+      zip: foundUser.zip,
+      ccNum: foundUser.ccNum,
+      ccv: foundUser.ccv,
+      expiry: foundUser.expiry,
     };
 
     // redirect to home
@@ -66,6 +74,18 @@ router.post("/login", async (req, res) => {
   } catch (error) {
     res.send({ message: "Internal Server Error", err: error });
   }
+});
+
+// view user account
+router.get("auth/:id", (req, res) => {
+  db.User.findById(req.params.id, (err, foundUser) => {
+    if (err) {
+      console.log(err);
+      return res.send(err);
+    }
+    const context = { user: foundUser };
+    res.render("auth/show", context);
+  });
 });
 
 // logout delete <- destroy session

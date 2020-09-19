@@ -18,7 +18,8 @@
       </ul>
       <% if(user) { %>
       <p>Welcome, <%= user.username %></p>
-      <p><%= user.id %></p>
+      <a href="/auth/<% user._id %>"><%= user.id %></a>
+      <p></p>
 
       <form action="/logout?_method=DELETE" method="POST">
         <input type="submit" value="Logout" />
