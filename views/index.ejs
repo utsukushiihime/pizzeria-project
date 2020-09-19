@@ -18,11 +18,37 @@
   <div class="main">
     <div class="container">
       <div class="row">
-        <% if(user) { %>
-          Welcome, <%= user.username %> 
-        <% } else { %>
-          Welcome!
-          <% } %>
+        <div class="row row-cols-1 row-cols-md-1">
+          <div class="col mb-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <% if(user) { %>
+                    Welcome, <%= user.username %> 
+                  <% } else { %>
+                    Welcome!
+                    <% } %>
+                </h5>
+                <p class="card-text">
+                  
+                  <% if(user) { %>
+                    <span><b>Email:</b> <%= user.email %> </span><br>
+                    <span><b>Address:</b> <%= user.address %> </span><br>
+                    <span><b>City:</b> <%= user.city %> </span>
+                    <span><b>State:</b> <%= user.state %> </span>
+                    <span><b>Zip:</b> <%= user.zip %> </span><br>
+                    <span><b>Credit Card:</b> <%= user.ccNum %> </span><br>
+                    <span><b>CCV:</b> <%= user.ccv %> </span>
+                    <span><b>Expiry:</b> <%= user.expiry %> </span>
+                  <% } else { %>
+                    Welcome!
+                    <% } %>
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
