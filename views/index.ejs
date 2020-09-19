@@ -1,28 +1,31 @@
 <%- include("partials/header.ejs") %>
-<nav>
-  <h1>Pizzeria</h1>
-  <ul>
-    <li>
-      <a href="/tracker">Tracker</a>
-    </li>
-    <li>
-      <a href="/menu">Menu</a>
-    </li>
-  </ul>
-  <% if(user) { %>
-  <p>Welcome, <%= user.username %></p>
-
-  TODO Work on user account view and edit
-  <a href="/auth/<% user._id %>"><%= user.id %></a>
-  <p></p>
-
-  <form action="/logout?_method=DELETE" method="POST">
-    <input type="submit" value="Logout" />
-  </form>
-  <% } else { %>
-  <a href="/login">Login</a>
-  <a href="/register">Register</a>
-  <% } %>
-</nav>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal"><img class="img-fluid logo" src="/images/logo-horizontal.png" alt=""></h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+      <a class="p-2 text-dark" href="#">Menu</a>
+      <a class="p-2 text-dark" href="#">Tracker</a>
+      <% if(user) { %>
+      <a class="p-2 text-dark" href="#">View Account</a>
+      <a class="p-2 text-dark" href="#">View Orders</a>
+    </nav>
+      <form action="/logout?_method=DELETE" method="POST">
+        <input class="btn btn-outline-primary" type="submit" value="Logout" />
+      </form>
+    <% } else { %>
+      <a href="/login">Login</a> | <a href="/register">Register</a>
+      <% } %>
+  </div>
+  <div class="main">
+    <div class="container">
+      <div class="row">
+        <% if(user) { %>
+          Welcome, <%= user.username %> 
+        <% } else { %>
+          Welcome!
+          <% } %>
+      </div>
+    </div>
+  </div>
+  
 
 <%- include("partials/footer.ejs") %>
