@@ -76,9 +76,9 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// view user account
-router.get("auth/:id", (req, res) => {
-  db.User.findById(req.params.id, (err, foundUser) => {
+// show
+router.get("/:id", function (req, res) {
+  db.User.findById(req.params.id, function (err, foundUser) {
     if (err) {
       console.log(err);
       return res.send(err);

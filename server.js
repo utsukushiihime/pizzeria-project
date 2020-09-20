@@ -49,8 +49,11 @@ app.get("/", (req, res) => {
   res.render("index", { user: req.session.currentUser });
 });
 
+
 // Auth Routes
 app.use("/", controllers.auth);
+
+app.use("/:id", authRequired, controllers.auth);
 
 /* Server Listener */
 app.listen(PORT, () => {
