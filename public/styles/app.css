@@ -60,3 +60,7 @@ a:hover {
     top: 0.1rem;
     position: relative;
 }
+
+.form-control {
+    padding: .375rem .75rem 0;
+}
