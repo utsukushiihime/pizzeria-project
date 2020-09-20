@@ -7,24 +7,27 @@
       <a class="p-2 text-white" href="#">Tracker</a>
       <% if(user) { %>
         <!-- Example single danger button -->
-<div class="btn-group">
-  <div class="button-group dropleft">
+      <div class="btn-group">
+        <div class="button-group dropleft">
 
-  <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    My Account
-  </button>
+        <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          My Account
+        </button>
 
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="/auth/<%= user.id %>">View Account</a>
-    <a class="dropdown-item" href="/auth/<%= user.id %>/edit">Edit Account</a>
-    <a class="dropdown-item" href="/orders/">View Orders</a>
-    <div class="dropdown-divider"></div>
-        <form action="/logout?_method=DELETE" method="POST">
-        <input class="dropdown-item" type="submit" value="Logout" />
-      </form>
-  </div>
-</div>
-</div>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/auth/<%= user.id %>"><i class="fas fa-user"></i> View Account</a>
+          <a class="dropdown-item" href="/auth/<%= user.id %>/edit"><i class="fas fa-user-edit"></i> Edit Account</a>
+          <a class="dropdown-item" href="/orders/"><i class="fas fa-pizza-slice"></i> View Orders</a>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-item">
+            <form action="/logout?_method=DELETE" method="POST"> 
+            <button class="dropdown-item" type="submit" value="Logout" ><i class="fas fa-sign-out-alt"></i> Logout</button>
+          </form>
+          </div>
+
+        </div>
+      </div>
+      </div>
     </nav>
   
     <% } else { %>
