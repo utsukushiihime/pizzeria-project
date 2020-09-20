@@ -88,6 +88,35 @@ router.get("/:id", function (req, res) {
   });
 });
 
+// edit <- view
+router.get("/:id/edit", function (req, res) {
+  db.User.findById(req.params.id, function (err, foundUser) {
+    if (err) {
+      console.log(err);
+      return res.send(err);
+    }
+    const context = { author: foundUser };
+    res.render("auth/edit", context);
+  });
+});
+
+
+// update <- db change
+router.put("/:id", function (req, res) {
+  db.User.findByIdAndUpdate(req.params.id, req.body, { new: true }, (
+    err,
+    updatedUser
+  ) => {
+    if (err) {
+      console.log(err);
+      return res.send(err);
+    }
+
+    res.redirect(`/auth/${updateUser._id}`);
+  });
+});
+
+
 // logout delete <- destroy session
 router.delete("/logout", async (req, res) => {
   await req.session.destroy();
