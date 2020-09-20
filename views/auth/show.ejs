@@ -41,49 +41,97 @@
   </div>
   <!-- END Navigation -->
 
-  <!-- Main -->
-  <div class="main">
-    <div class="container">
-      <div class="row">
-        <h1>User Account</h1>
-        <div class="row row-cols-1 row-cols-md-1">
-          <div class="col mb-12">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">
-                  <%= user.username %> 
-                </h5>
+<!-- Main -->
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <h1>Account Info</h1>
 
-                <% if(user) { %>
-                
-                <!-- Welcome logged in - TEST to verify info -->
-                <p class="card-text">
-                  <span><b>Email:</b> <%= user.email %> </span><br>
-                  <span><b>Address:</b> <%= user.address %> </span><br>
-                  <span><b>City:</b> <%= user.city %> </span>
-                  <span><b>State:</b> <%= user.state %> </span>
-                  <span><b>Zip:</b> <%= user.zip %> </span><br>
-                  <span><b>Credit Card:</b> <%= user.ccNum %> </span><br>
-                  <span><b>CCV:</b> <%= user.ccv %> </span>
-                  <span><b>Expiry:</b> <%= user.expiry %> </span>
-                </p>
-                <a name="" id="" class="btn btn-danger" href="/auth/<%= user.id %>/edit " role="button">Edit Account</a>
-                <!-- END Welcome logged in -->
+      <!-- Registration Form -->
+      <form action="/auth/<%= user._id %>?_method=PUT" method="POST">
+        <div class="container">
+          <div class="row">
+            <!-- Left Column -->
+            <div class="col">
+            <div class="container">          
+              <div class="row mt-3">
+      
+                  <div class="form-group">
+                    <label for="Address">Address</label>
+                    <input type="text" class="form-control" name="address" placeholder="Address" value="<%= user.address %> " disabled />
+                  </div>
+      
+                  <div class="col-5 mt-3">
+                    <label for="City">City</label>
+                    <input type="text" class="form-control" name="city" placeholder="City" value="<%= user.city %>" disabled />
+                  </div>
+        
+                  <div class="col-4 mt-3">
+                    <label for="State">State</label>
+                    <input type="text" class="form-control" name="state" placeholder="State" value="<%= user.state %>" disabled />
+                  </div>
+        
+                  <div class="col mt-3">
+                    <label for="Zip">Zip</label>
+                    <input type="text" class="form-control" name="zip" placeholder="Zip" value="<%= user.zip %>" disabled />
+                  </div> 
+                </div>
+              </div>
+      
+              <div class="container">
+                <div class="row mt-3">
+      
+                  <div class="col-6">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" class="form-control" name="ccNum" placeholder="Card Number" value="<%= user.ccNum %>" disabled />
+                  </div>
+          
+                  <div class="col">
+                    <label for="CVV">CVV</label>
+                    <input type="text" class="form-control" name="ccv" placeholder="CCV" value="<%= user.ccv %>" disabled />
+                  </div>
+          
+                  <div class="col">
+                    <label for="Expirt">Expiration Date</label>
+                    <input type="text" class="form-control" name="expiry" placeholder="(MMYY)" value="<%= user.expiry %>" disabled />
+                  </div>
 
-                <% } else { %>
-                <!-- Welcome not logged in. -->
-                <p>
-                  Our pizza is outta this world.
-                  <% } %>
-                </p>
-                <!-- END Welcome not logged in -->
+      
+                </div>
               </div>
             </div>
-          </div>
+            <!-- END Left Column -->
+           
+            <!-- Right Column -->
+            <div class="col-4">
+              <div class="container border-left">
+                <div class="row mt-3">
+                  <div class="form-group mt-3">
+                    <label for="Username">Full Name</label>
+                    <input type="text" class="form-control" name="username" placeholder="Please enter your full name" value="<%= user.username %>" disabled />
+                  </div>
+                  <div class="form-group mt-3">
+                    <label for="Email">Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="Email" value="<%= user.email %>" disabled />
+                  </div>
+                  <div class="mt-3">
+                  <a href="#">Reset Password</a>
+                </div>
+                <div class="form-group mt-3">
+                  <a name="" id="" class="btn btn-danger" href="/auth/<%= user.id %>/edit " role="button">Edit Account</a>
+                </div>
+              </div>
+            </div>
+            </div>
+            <!-- END Right Column -->
         </div>
-      </div>
+        </div>
+
+      </form>
+      <!-- END Registration Form -->
     </div>
   </div>
-  <!-- END Main -->
+</div>
+<!-- END Main -->
 
 <%- include("../partials/footer.ejs") %>

@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Baloo Tammudu 2', cursive;
+    line-height: 1em;
+}
+
+
 a {
     color: #bb3628;
     text-decoration: none;
@@ -28,8 +36,12 @@ a:hover {
     color: #8e2117 !important;
 }
 
+.btn {
+    padding: .375rem .75rem 0;
+}
+
 .btn-danger:hover {
-    color: #fff;
+    color: #fff !important;
     background-color: #8e2117 !important;
     border-color: #8e2117 !important;
 }
@@ -37,4 +49,18 @@ a:hover {
 .btn-outline-danger {
     color: #bb3628;
     border: #bb3628 solid 1px;
+}
+
+.btn-group-sm>.btn, .btn-sm {
+    padding: .35rem .5rem 0;
+}
+
+.fa, .fas {
+    font-weight: 900;
+    top: 0.1rem;
+    position: relative;
+}
+
+.form-control {
+    padding: .375rem .75rem 0;
 }
