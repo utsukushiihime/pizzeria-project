@@ -1,20 +1,40 @@
 <%- include("partials/header.ejs") %>
   <!-- Navigation -->
-  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
     <h5 class="my-0 mr-md-auto font-weight-normal"><img class="img-fluid logo" src="/images/logo-horizontal.png" alt=""></h5>
     <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-2 text-dark" href="#">Menu</a>
-      <a class="p-2 text-dark" href="#">Tracker</a>
+      <a class="p-2 text-white" href="#">Menu</a>
+      <a class="p-2 text-white" href="#">Tracker</a>
       <% if(user) { %>
-      <a class="p-2 text-dark" href="/auth/<%= user.id %>">View Account</a>
-      <a class="p-2 text-dark" href="#">View Orders</a>
-    </nav>
-      <form action="/logout?_method=DELETE" method="POST">
-        <input class="btn btn-outline-primary" type="submit" value="Logout" />
+        <!-- Example single danger button -->
+<div class="btn-group">
+  <div class="button-group dropleft">
+
+  <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    My Account
+  </button>
+
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="/auth/<%= user.id %>">View Account</a>
+    <a class="dropdown-item" href="/auth/<%= user.id %>/edit">Edit Account</a>
+    <a class="dropdown-item" href="/orders/">View Orders</a>
+    <div class="dropdown-divider"></div>
+        <form action="/logout?_method=DELETE" method="POST">
+        <input class="dropdown-item" type="submit" value="Logout" />
       </form>
+  </div>
+</div>
+</div>
+    </nav>
+  
     <% } else { %>
-      <a href="/login">Login</a> | <a href="/register">Register</a>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <a class="btn btn-sm btn-outline-danger" href="/login">Login</a> 
+      
+      <a class="btn btn-sm btn-outline-danger" href="/register">Register</a>
+      </div>
       <% } %>
+
   </div>
   <!-- END Navigation -->
 

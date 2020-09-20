@@ -1,3 +1,35 @@
+a {
+    color: #bb3628;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #eeb51c !important;
+}
+
+.bg-dark {
+    background-color: #222 !important;
+}
+
 .logo {
     max-width: 250px;
+}
+
+.btn-danger, .btn-outline-danger:hover {
+    background: #bb3628;
+}
+
+a:hover {
+    color: #8e2117 !important;
+}
+
+.btn-danger:hover {
+    color: #fff;
+    background-color: #8e2117 !important;
+    border-color: #8e2117 !important;
+}
+
+.btn-outline-danger {
+    color: #bb3628;
+    border: #bb3628 solid 1px;
 }
