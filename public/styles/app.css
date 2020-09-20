@@ -54,3 +54,9 @@ a:hover {
 .btn-group-sm>.btn, .btn-sm {
     padding: .35rem .5rem 0;
 }
+
+.fa, .fas {
+    font-weight: 900;
+    top: 0.1rem;
+    position: relative;
+}
