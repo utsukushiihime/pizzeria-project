@@ -1,4 +1,5 @@
 <%- include("partials/header.ejs") %>
+
   <!-- Navigation -->
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
     <h5 class="my-0 mr-md-auto font-weight-normal"><a href="/"><img class="img-fluid logo" src="/images/logo-horizontal.png" alt=""></a></h5>
@@ -13,7 +14,6 @@
         <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           My Account
         </button>
-
         <div class="dropdown-menu">
           <a class="dropdown-item" href="/auth/<%= user.id %>"><i class="fas fa-user"></i> View Account</a>
           <a class="dropdown-item" href="/auth/<%= user.id %>/edit"><i class="fas fa-user-edit"></i> Edit Account</a>
@@ -29,15 +29,12 @@
       </div>
       </div>
     </nav>
-  
     <% } else { %>
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
       <a class="btn btn-sm btn-outline-danger" href="/login">Login</a> 
-      
       <a class="btn btn-sm btn-outline-danger" href="/register">Register</a>
       </div>
       <% } %>
-
   </div>
   <!-- END Navigation -->
 
@@ -62,7 +59,7 @@
                     <h4 class="mb-0">Hawaiian Pizza</h4>
                     <div class="mb-1 text-muted">$15.99</div>
                     <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    <button type="button" class="btn btn-danger btn-lg">Order Now <i class="fas fa-long-arrow-alt-right"></i></button>
+                    <a href="/orders/" type="button" class="btn btn-danger btn-lg">Order Now <i class="fas fa-long-arrow-alt-right"></i></a>
                   </div>
                   <div class="col-auto d-none d-lg-block">
                     <img src="../images/hawaiian-pizza.jpg" alt="" srcset="" width="300px" height="250px">
