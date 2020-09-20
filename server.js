@@ -20,6 +20,11 @@ app.set("view engine", "ejs");
 /* Middleware */
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.originalUrl}`);
+  next();
+});
+
 app.use(methodOverride("_method"));
 app.use(
   session({
@@ -51,6 +56,7 @@ app.get("/", (req, res) => {
 
 // Auth Routes
 app.use("/", controllers.auth);
+app.use("/:id", authRequired, controllers.auth);
 
 /* Server Listener */
 app.listen(PORT, () => {

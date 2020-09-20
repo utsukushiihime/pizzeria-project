@@ -76,8 +76,8 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// view user account
-router.get("auth/:id", (req, res) => {
+// show
+router.get("/:id", (req, res) => {
   db.User.findById(req.params.id, (err, foundUser) => {
     if (err) {
       console.log(err);
@@ -86,6 +86,35 @@ router.get("auth/:id", (req, res) => {
     const context = { user: foundUser };
     res.render("auth/show", context);
   });
+});
+
+// edit <- view
+router.get("/:id/edit", (req, res) => {
+  db.User.findById(req.params.id, (err, foundUser) => {
+    if (err) {
+      console.log(err);
+      return res.send(err);
+    }
+    const context = { user: foundUser };
+    res.render("auth/edit", context);
+  });
+});
+
+// update <- db change
+router.put("/:id", (req, res) => {
+  db.User.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (err, updatedUser) => {
+      if (err) {
+        console.log(err);
+        return res.send(err);
+      }
+
+      res.redirect(`/${updatedUser._id}`);
+    }
+  );
 });
 
 // logout delete <- destroy session
