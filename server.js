@@ -58,7 +58,7 @@ app.get("/", (req, res) => {
 app.use("/", controllers.auth);
 
 // User Routers
-app.use("/users", controllers.user);
+app.use("/user", controllers.user);
 
 /* Server Listener */
 app.listen(PORT, () => {

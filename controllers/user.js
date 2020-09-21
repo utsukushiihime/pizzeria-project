@@ -45,7 +45,7 @@ router.get("/:id", (req, res) => {
         return res.send(err);
       }
       const context = { user: foundUser };
-      res.render("auth/show", context);
+      res.render("user/show", context);
     });
   });
   
@@ -57,7 +57,7 @@ router.get("/:id", (req, res) => {
         return res.send(err);
       }
       const context = { user: foundUser };
-      res.render("auth/edit", context);
+      res.render("user/edit", context);
     });
   });
   
@@ -73,7 +73,7 @@ router.get("/:id", (req, res) => {
           return res.send(err);
         }
   
-        res.redirect(`/${updatedUser._id}`);
+        res.redirect(`/user/${updatedUser._id}`);
       }
     );
   });
