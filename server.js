@@ -24,6 +24,7 @@ app.use((req, res, next) => {
   console.log(`${req.method} ${req.originalUrl}`);
   next();
 });
+
 app.use(methodOverride("_method"));
 app.use(
   session({
@@ -56,9 +57,6 @@ app.get("/", (req, res) => {
 // Auth Routes
 app.use("/", controllers.auth);
 app.use("/:id", authRequired, controllers.auth);
-
-// Order Routes
-app.use("/orders", controllers.order);
 
 /* Server Listener */
 app.listen(PORT, () => {
