@@ -57,6 +57,7 @@ app.get("/", (req, res) => {
 // Auth Routes
 app.use("/", controllers.auth);
 
+// User Routers
 app.use("/users", controllers.user);
 
 /* Server Listener */
