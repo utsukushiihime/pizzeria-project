@@ -56,7 +56,8 @@ app.get("/", (req, res) => {
 
 // Auth Routes
 app.use("/", controllers.auth);
-app.use("/:id", authRequired, controllers.auth);
+
+app.use("/users", controllers.user);
 
 /* Server Listener */
 app.listen(PORT, () => {
