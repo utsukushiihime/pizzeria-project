@@ -7,23 +7,27 @@ const pizzaSchema = new mongoose.Schema({
     required: true
   },
   size: {
-    type: String,
+    type: pizzaSize ["Rocket Slice", "Frisbee", "Moon", "Planet", "FSM"],
     required: true
   },
   crust: {
-    type: String,
+    type: pizzaCrust ["Nano-Thin", "Standard Terran", "Deep Impact", "Cheesy Googlers", "Gluten Free"],
     required: true
   },
   sauce: {
-    type: String,
+    type: pizzaSauce ["Classic Marinara", "Garlic Parmesan", "Duck Sauce", "Mustard", "No Sauce"],
     required: true
   },
   cheese: {
-    type: String,
+    type: pizzaCheese ["Humble Cheddar", "Pure Parmesan", "Specialty Mix", "Heart Attack Blend", "None"],
     required: true
   },
-  toppings: {
-    type: String,
+  toppingsMeat: {
+    type: meatToppings["Pepperoni", "Italian Sausage", "Ham", "Canadian Bacon", "American Bacon", "Grilled Chicken", "Crispy Crickets", "Shredded Ostrich", "One Massive Meatball"],
+    required: true
+  },
+  toppingsVeggie: {
+    type: veggieToppings["Pineapple", "Mushrooms", "Banana Peppers", "Jalapeñoface Peppers", "Black Olives", "Red Onions", "Broccoli", "Hashbrowns", "Pumpkin", "Avacado"],
     required: true
   },
   price: {
