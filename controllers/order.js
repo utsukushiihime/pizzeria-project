@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
         orders: foundOrders,
       };
   
-      res.render("orders/index", context);
+      res.render("order/index", context);
     });
   });
   
@@ -26,39 +26,16 @@ router.get("/", (req, res) => {
         user: foundUsers,
       };
   
-      res.render("orders/new", context);
+      res.render("order/new", context);
     });
   });
   
   // create
   router.post("/", async (req, res) => {
     console.log(req.body);
-    // db.Order.create(req.body, function (err, createdOrder) {
-    //   if (err) {
-    //     console.log(err);
-    //     return res.send(err);
-    //   }
-    //   db.User.findById(req.body.user, function (err, foundUser) {
-    //     if (err) {
-    //       console.log(err);
-    //       return res.send(err);
-    //     }
-  
-    //     foundUser.orders.push(createdOrder);
-    //     foundUser.save(); // important because this commits the user back to the db
-  
-    //     res.redirect("/orders");
-    //   });
-    // });
-  
     try {
       const createdOrder = await db.Order.create(req.body);
-      const foundUser = await db.User.findById(req.body.user);
-  
-      foundUser.orders.push(createdOrder);
-      await foundUser.save();
-  
-      res.redirect("/orders");
+      res.redirect("/order");
     } catch (error) {
       console.log(error);
       res.send({ message: "Internal server error" });
@@ -72,8 +49,8 @@ router.get("/", (req, res) => {
         console.log(err);
         return res.send(err);
       }
-      const context = { orders: foundOrder };
-      res.render("orders/show", context);
+      const context = { order: foundOrder };
+      res.render("order/show", context);
     });
   });
   
@@ -85,7 +62,7 @@ router.get("/", (req, res) => {
         return res.send(err);
       }
       const context = { orders: foundOrder };
-      res.render("orders/edit", context);
+      res.render("order/edit", context);
     });
   });
   

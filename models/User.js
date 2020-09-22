@@ -13,6 +13,13 @@ const userSchema = new mongoose.Schema(
     ccv: { type: Number, required: true },
     expiry: { type: Number, required: true },
     createdAt: { type: Date, default: Date.now()},
+    orders: [
+      // reference
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Order",
+      },
+    ],
   },
   { timestamps: true }
 );

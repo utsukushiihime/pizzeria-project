@@ -15,8 +15,8 @@
           My Account
         </button>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="/auth/<%= user.id %>"><i class="fas fa-user"></i> View Account</a>
-          <a class="dropdown-item" href="/auth/<%= user.id %>/edit"><i class="fas fa-user-edit"></i> Edit Account</a>
+          <a class="dropdown-item" href="/user/<%= user.id %>"><i class="fas fa-user"></i> View Account</a>
+          <a class="dropdown-item" href="/user/<%= user.id %>/edit"><i class="fas fa-user-edit"></i> Edit Account</a>
           <a class="dropdown-item" href="/orders/"><i class="fas fa-pizza-slice"></i> View Orders</a>
           <div class="dropdown-divider"></div>
           <div class="dropdown-item">
@@ -59,7 +59,7 @@
                     <h4 class="mb-0">Hawaiian Pizza</h4>
                     <div class="mb-1 text-muted">$15.99</div>
                     <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    <a href="/orders/" type="button" class="btn btn-danger btn-lg">Order Now <i class="fas fa-long-arrow-alt-right"></i></a>
+                    <a href="/order/new" type="button" class="btn btn-danger btn-lg">Order Now <i class="fas fa-long-arrow-alt-right"></i></a>
                   </div>
                   <div class="col-auto d-none d-lg-block">
                     <img src="../images/hawaiian-pizza.jpg" alt="" srcset="" width="300px" height="250px">

@@ -15,8 +15,8 @@
         </button>
 
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="/auth/<%= user.id %>"><i class="fas fa-user"></i> View Account</a>
-          <a class="dropdown-item" href="/auth/<%= user.id %>/edit"><i class="fas fa-user-edit"></i> Edit Account</a>
+          <a class="dropdown-item" href="/user/<%= user.id %>"><i class="fas fa-user"></i> View Account</a>
+          <a class="dropdown-item" href="/user/<%= user.id %>/edit"><i class="fas fa-user-edit"></i> Edit Account</a>
           <a class="dropdown-item" href="/orders/"><i class="fas fa-pizza-slice"></i> View Orders</a>
           <div class="dropdown-divider"></div>
           <div class="dropdown-item">
@@ -48,7 +48,7 @@
       <h1>Update Account</h1>
 
       <!-- Registration Form -->
-      <form action="/auth/<%= user._id %>?_method=PUT" method="POST">
+      <form action="/user/<%= user._id %>?_method=PUT" method="POST">
         <div class="container">
           <div class="row">
             <!-- Left Column -->

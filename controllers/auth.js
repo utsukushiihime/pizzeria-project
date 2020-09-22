@@ -67,6 +67,7 @@ router.post("/login", async (req, res) => {
       ccNum: foundUser.ccNum,
       ccv: foundUser.ccv,
       expiry: foundUser.expiry,
+      orders: foundUser.order,
     };
 
     // redirect to home

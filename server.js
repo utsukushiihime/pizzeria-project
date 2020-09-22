@@ -32,7 +32,7 @@ app.use(
     saveUninitialized: false,
     secret: "PlanetPizzaPizzeria",
     store: new MongoStore({
-      url: "mongodb://localhost:27017/blog-sessions",
+      url: "mongodb://localhost:27017/pizzeria-sessions",
     }),
     cookie: {
       maxAge: 1000 * 60 * 60 * 24 * 7 * 2,
@@ -57,7 +57,11 @@ app.get("/", (req, res) => {
 // Auth Routes
 app.use("/", controllers.auth);
 
-app.use("/users", controllers.user);
+// User Routers
+app.use("/user", controllers.user);
+
+// Order Router
+app.use("/order", controllers.order);
 
 /* Server Listener */
 app.listen(PORT, () => {
