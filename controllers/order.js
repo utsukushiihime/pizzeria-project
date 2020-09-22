@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
         orders: foundOrders,
       };
   
-      res.render("orders/index", context);
+      res.render("order/index", context);
     });
   });
   
@@ -26,38 +26,15 @@ router.get("/", (req, res) => {
         user: foundUsers,
       };
   
-      res.render("orders/new", context);
+      res.render("order/new", context);
     });
   });
   
   // create
   router.post("/", async (req, res) => {
     console.log(req.body);
-    // db.Order.create(req.body, function (err, createdOrder) {
-    //   if (err) {
-    //     console.log(err);
-    //     return res.send(err);
-    //   }
-    //   db.User.findById(req.body.user, function (err, foundUser) {
-    //     if (err) {
-    //       console.log(err);
-    //       return res.send(err);
-    //     }
-  
-    //     foundUser.orders.push(createdOrder);
-    //     foundUser.save(); // important because this commits the user back to the db
-  
-    //     res.redirect("/orders");
-    //   });
-    // });
-  
     try {
       const createdOrder = await db.Order.create(req.body);
-      const foundUser = await db.User.findById(req.body.user);
-  
-      foundUser.orders.push(createdOrder);
-      await foundUser.save();
-  
       res.redirect("/orders");
     } catch (error) {
       console.log(error);
@@ -67,14 +44,16 @@ router.get("/", (req, res) => {
   
   // show
   router.get("/:id", function (req, res) {
-    db.Order.findById(req.params.id, function (err, foundOrder) {
-      if (err) {
-        console.log(err);
-        return res.send(err);
-      }
-      const context = { orders: foundOrder };
-      res.render("orders/show", context);
-    });
+    db.Order.findById(req.params.id)
+      .populate("user")
+      .exec(function (err, foundUser) {
+        if (err) {
+          console.log(err);
+          return res.send(err);
+        }
+        const context = { user: foundUser };
+        res.render("user/show", context);
+      });
   });
   
   // edit
@@ -85,7 +64,7 @@ router.get("/", (req, res) => {
         return res.send(err);
       }
       const context = { orders: foundOrder };
-      res.render("orders/edit", context);
+      res.render("order/edit", context);
     });
   });
   
