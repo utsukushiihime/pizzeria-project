@@ -46,7 +46,7 @@
   <div class="container">
     <div class="row">
       <h1>Account Info</h1>
-
+    <p>Orders: <%= user.orders %> </p>
       <!-- Registration Form -->
       <form action="/user/<%= user._id %>?_method=PUT" method="POST">
         <div class="container">

@@ -38,8 +38,10 @@ router.get("/", async function (req, res) {
 
 
 // show
-router.get("/:id", (req, res) => {
-    db.User.findById(req.params.id, (err, foundUser) => {
+router.get("/:id", function (req, res) {
+  db.User.findById(req.params.id)
+    .populate("orders")
+    .exec(function (err, foundUser) {
       if (err) {
         console.log(err);
         return res.send(err);
@@ -47,7 +49,7 @@ router.get("/:id", (req, res) => {
       const context = { user: foundUser };
       res.render("user/show", context);
     });
-  });
+});
   
   // edit <- view
   router.get("/:id/edit", (req, res) => {
