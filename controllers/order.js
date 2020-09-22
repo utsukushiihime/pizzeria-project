@@ -35,7 +35,7 @@ router.get("/", (req, res) => {
     console.log(req.body);
     try {
       const createdOrder = await db.Order.create(req.body);
-      res.redirect("/orders");
+      res.redirect("/order");
     } catch (error) {
       console.log(error);
       res.send({ message: "Internal server error" });
@@ -44,16 +44,14 @@ router.get("/", (req, res) => {
   
   // show
   router.get("/:id", function (req, res) {
-    db.Order.findById(req.params.id)
-      .populate("user")
-      .exec(function (err, foundUser) {
-        if (err) {
-          console.log(err);
-          return res.send(err);
-        }
-        const context = { user: foundUser };
-        res.render("user/show", context);
-      });
+    db.Order.findById(req.params.id, function (err, foundOrder) {
+      if (err) {
+        console.log(err);
+        return res.send(err);
+      }
+      const context = { order: foundOrder };
+      res.render("order/show", context);
+    });
   });
   
   // edit
