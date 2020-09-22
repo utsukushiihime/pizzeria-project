@@ -7,31 +7,37 @@ const pizzaSchema = new mongoose.Schema({
     required: true
   },
   size: {
-    type: pizzaSize ["Rocket Slice", "Frisbee", "Moon", "Planet", "FSM"],
+    type: String,
+    enum: ["Rocket Slice", "Frisbee", "Moon", "Planet", "FSM"],
     required: true
   },
   crust: {
-    type: pizzaCrust ["Nano-Thin", "Standard Terran", "Deep Impact", "Cheesy Googlers", "Gluten Free"],
+    type: String,
+    enum: ["Nano-Thin", "Standard Terran", "Deep Impact", "Cheesy Googlers", "Gluten Free"],
     required: true
   },
   sauce: {
-    type: pizzaSauce ["Classic Marinara", "Garlic Parmesan", "Duck Sauce", "Mustard", "No Sauce"],
+    type: String,
+    enum: ["Classic Marinara", "Garlic Parmesan", "Duck Sauce", "Mustard", "No Sauce"],
     required: true
   },
   cheese: {
-    type: pizzaCheese ["Humble Cheddar", "Pure Parmesan", "Specialty Mix", "Heart Attack Blend", "None"],
+    type: String,
+    enum: ["Humble Cheddar", "Pure Parmesan", "Blended Mix", "Aorta Special", "None"],
     required: true
   },
   toppingsMeat: {
-    type: meatToppings["Pepperoni", "Italian Sausage", "Ham", "Canadian Bacon", "American Bacon", "Grilled Chicken", "Crispy Crickets", "Shredded Ostrich", "One Massive Meatball"],
+    type: String,
+    enum: ["Pepperoni", "Italian Sausage", "Ham", "Canadian Bacon", "American Bacon", "Grilled Chicken", "Crispy Crickets", "Shredded Ostrich", "One Massive Meatball"],
     required: true
   },
   toppingsVeggie: {
-    type: veggieToppings["Pineapple", "Mushrooms", "Banana Peppers", "Jalapeñoface Peppers", "Black Olives", "Red Onions", "Broccoli", "Hashbrowns", "Pumpkin", "Avacado"],
+    type: String,
+    enum: ["Pineapple", "Mushrooms", "Banana Peppers", "Jalapeñoface Peppers", "Black Olives", "Red Onions", "Broccoli", "Hashbrowns", "Pumpkin", "Avacado"],
     required: true
   },
   price: {
-    type: number,
+    type: Number,
     required: true
   },
 },  
