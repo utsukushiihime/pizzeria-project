@@ -29,7 +29,7 @@ router.get("/", (req, res) => {
       res.render("order/new", context);
     });
   });
-  
+
   // create
   router.post("/", async (req, res) => {
     console.log(req.body);
