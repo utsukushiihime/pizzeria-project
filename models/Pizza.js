@@ -78,7 +78,7 @@ const pizzaSchema = new mongoose.Schema(
     },
     price: {
       type: Number,
-      required: true,
+      required: true, default: 15,
     },
   },
   {
