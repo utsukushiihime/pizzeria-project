@@ -22,87 +22,109 @@
     <div class="row">
       <h1>Customize Your Pizza</h1>
 
-      <!-- Pizza Customize Form -->
+      <!-- Pizza Customize -->
       <div class="container">
         <div class="row">
           <div class="col-3">
             <div class="container">          
               <div class="row mt-3">
 
-          <form action="" method="post">
+                <!-- Form Start -->
+              <form action="/pizza" method="POST">
+              
+              <!-- Left Column Options -->
+              <h5>Select Your Crust</h5>
+              <select class="custom-select custom-select-lg mb-3">
+                <option selected>Select Your Crust</option>
+                <% for( let i = 0; i < crustValues.length; i++ ) { %>
+                <option value="<%= crustValues[i] %>"><%= crustValues[i] %></option>
+                <% } %>
+              </select>
 
-          <h4>Select Your Crust</h4>
-          <select class="custom-select custom-select-lg mb-3">
-            <option selected>Select Your Crust</option>
-            <% for( let i = 0; i < crustValues.length; i++ ) { %>
-            <option value="<%= crustValues[i] %>"><%= crustValues[i] %></option>
-            <% } %>
-          </select>
+              <h5>Select Your Sauce</h5>
+              <select class="custom-select custom-select-lg mb-3">
+                <option selected>Select Your Sauce</option>
+                <% for( let i = 0; i < sauceValues.length; i++ ) { %>
+                <option value="<%= sauceValues[i] %>"><%= sauceValues[i] %></option>
+                <% } %>
+              </select>
 
-          <h4>Select Your Sauce</h4>
-          <select class="custom-select custom-select-lg mb-3">
-            <option selected>Select Your Sauce</option>
-            <% for( let i = 0; i < sauceValues.length; i++ ) { %>
-            <option value="<%= sauceValues[i] %>"><%= sauceValues[i] %></option>
-            <% } %>
-          </select>
+              <h5>Select Your Cheese</h5>
+              <select class="custom-select custom-select-lg mb-3">
+                <option selected>Select Your Cheese</option>
+                <% for( let i = 0; i < cheeseValues.length; i++ ) { %>
+                <option value="<%= cheeseValues[i] %>"><%= cheeseValues[i] %></option><% } %>
+              </select>
+                </div>
+              </div>
+          </div>
+              <!-- END Left Column Options -->
 
-          <h4>Select Your Cheese</h4>
-          <select class="custom-select custom-select-lg mb-3">
-            <option selected>Select Your Cheese</option>
-            <% for( let i = 0; i < cheeseValues.length; i++ ) { %>
-            <option value="<%= cheeseValues[i] %>"><%= cheeseValues[i] %></option>
-            <% } %>
-          </select>
+              <!-- Center Column Options -->
+              <div class="col-4">
+                <div class="container border-left">
+                  <div class="row mt-3">
+                    <div class="form-group mt-3">
+                    <h3>Meat Toppings</h3>
+                    <div class="form-check">
+                    <% for( let i = 0; i < toppingsMeatValues.length; i++ ) { %>
+                    <input class="form-check-input" type="checkbox" value="<%= toppingsMeatValues[i] %>" id="meatToppings">
+                    <!-- TODO Fix Form Styling for checkboxes -->
+                    <label class="form-check-label" for="meatToppings"><%= toppingsMeatValues[i] %><br><br><% } %>
+                    </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            <!-- END Center Column Options -->
+
+            <!-- Right Column Options -->
+            <div class="col-5">
+              <div class="container border-left">
+                <div class="row mt-3">
+                  <div class="form-group mt-3">
+                  <h3>Veggie Toppings</h3>
+                  <div class="form-check">
+                    <% for( let i = 0; i < toppingsVeggieValues.length; i++ ) { %>
+                      <input class="form-check-input" type="checkbox" value="<%= toppingsVeggieValues[i] %>" id="meatToppings">
+                      <!-- TODO Fix Form Styling for checkboxes -->
+                      <label class="form-check-label" for="meatToppings"><%= toppingsVeggieValues[i] %><br><br><% } %></label>
+                  </div>
               </div>
             </div>
           </div>
+            </div>
+            <!-- END Right Column Options -->
+          </div>
+            <!-- TODO Prices for each up to 3 toppings and $0.50 after. -->
+              <div class="name">
+              Name:  
+              <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+              </div>
+              <input type="text" name="name" class="form-control" aria-label="Please enter your name">
+            </div>
+            </div>
 
-        <div class="col-4">
-          <div class="container border-left">
-            <div class="row mt-3">
-              <div class="form-group mt-3">
-
-          <h3>Meat Toppings</h3>
-          <div class="form-check">
-            
-
-            <% for( let i = 0; i < toppingsMeatValues.length; i++ ) { %>
-              <input class="form-check-input" type="checkbox" value="<%= toppingsMeatValues[i] %>" id="meatToppings">
-              <label class="form-check-label" for="meatToppings">
-                <%= toppingsMeatValues[i] %><br><br>
-                <% } %>
-            </label>
-          </div>
-          </div>
-          </div>
-        </div>
-        </div>
-          <div class="col-5">
-            <div class="container border-left">
-              <div class="row mt-3">
-                <div class="form-group mt-3">
-          <h3>Veggie Toppings</h3>
-          <div class="form-check">
-            <% for( let i = 0; i < toppingsVeggieValues.length; i++ ) { %>
-              <input class="form-check-input" type="checkbox" value="<%= toppingsVeggieValues[i] %>" id="meatToppings">
-              <label class="form-check-label" for="meatToppings">
-                <%= toppingsVeggieValues[i] %><br><br>
-                <% } %>
-            </label>
-          </div>
-          <!-- TODO Prices for each up to 3 toppings and $0.50 after. -->
-          <div class="price">
-            Price: <%= pizzas.price %> 
-          </div>
-          </div>
-        </div>
-        </div>
-        </div>
-        </div>
-      </form>
+            <div class="price">
+              Price:  
+              <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <input type="text" name="price" class="form-control" aria-label="Amount (to the nearest dollar)">
+              <div class="input-group-append">
+                <span class="input-group-text">.00</span>
+              </div>
+            </div>
+            </div>
+             <button type="submit" class="btn btn-danger">Submit</button>
+          </form>
+          <!-- END Form -->
       </div>
-    <!-- END Pizza Customize Form -->
+    <!-- END Pizza Customize -->
     </div>
   </div>
 </div>

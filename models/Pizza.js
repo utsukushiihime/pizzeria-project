@@ -5,12 +5,12 @@ const pizzaSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: true,
+      // required: true,
     },
     size: {
       type: String,
       enum: ["Rocket Slice", "Frisbee", "Moon", "Planet", "FSM"],
-      required: true,
+      // required: true,
     },
     crust: {
       type: String,
@@ -21,7 +21,7 @@ const pizzaSchema = new mongoose.Schema(
         "Cheesy Googlers",
         "Gluten Free",
       ],
-      required: true,
+      // required: true,
     },
     sauce: {
       type: String,
@@ -32,7 +32,7 @@ const pizzaSchema = new mongoose.Schema(
         "Mustard",
         "No Sauce",
       ],
-      required: true,
+      // required: true,
     },
     cheese: {
       type: String,
@@ -43,7 +43,7 @@ const pizzaSchema = new mongoose.Schema(
         "Aorta Special",
         "None",
       ],
-      required: true,
+      // required: true,
     },
     toppingsMeat: {
       type: String,
@@ -58,7 +58,7 @@ const pizzaSchema = new mongoose.Schema(
         "Shredded Ostrich",
         "One Massive Meatball",
       ],
-      required: true,
+      // required: true,
     },
     toppingsVeggie: {
       type: String,
@@ -74,11 +74,11 @@ const pizzaSchema = new mongoose.Schema(
         "Pumpkin",
         "Avacado",
       ],
-      required: true,
+      // required: true,
     },
     price: {
       type: Number,
-      required: true, default: 15,
+      // required: true,
     },
   },
   {
