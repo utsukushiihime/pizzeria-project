@@ -30,8 +30,35 @@ router.get("/", function (req, res) {
   });
 });
 
+// new route
+router.get("/new", function (req, res) {
+  db.Pizza.find({}, function (error, foundPizzas) {
+    const size = db.Pizza.schema.path('size').enumValues;
+    const crust = db.Pizza.schema.path('crust').enumValues;
+    const sauce = db.Pizza.schema.path('sauce').enumValues;
+    const cheese = db.Pizza.schema.path('cheese').enumValues;
+    const toppingsMeat = db.Pizza.schema.path('toppingsMeat').enumValues;
+    const toppingsVeggie = db.Pizza.schema.path('toppingsVeggie').enumValues;
+
+    if (error) return res.send(error);
+
+    const context = {
+      pizzas: foundPizzas,
+      sizeValues: size,
+      crustValues: crust,
+      sauceValues: sauce,
+      cheeseValues: cheese,
+      toppingsMeatValues: toppingsMeat,
+      toppingsVeggieValues: toppingsVeggie,
+    };
+
+    res.render("pizza/new", context);
+  });
+});
+
 // new
 router.get("/new", function (req, res) {
+  
   res.render("pizza/new");
 });
 
