@@ -25,11 +25,17 @@
   <div class="container">
     <div class="row">
       <h1>Customize Your Pizza</h1>
-     
-      
+      <form action="" method="post">
+      <select class="custom-select custom-select-lg mb-3">
+        <option selected>Select Your Crust</option>
+        <% for( let i = 0; i < crustValues.length; i++ ) { %>
+        <option value="<%= crustValues[i] %>"><%= crustValues[i] %></option>
+        <% } %>
+      </select>
+    </form>
     </div>
   </div>
 </div>
-<!-- END Main
+<!-- END Main -->
 
 <%- include("../partials/footer.ejs") %>
