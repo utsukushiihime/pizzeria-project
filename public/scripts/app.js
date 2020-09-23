@@ -1,2 +1,1 @@
-console.log('This is accessible');
-const price = 15;
+console.log("This is accessible");
