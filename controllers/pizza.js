@@ -7,10 +7,14 @@ const bcrypt = require("bcryptjs");
 // index view /users
 router.get("/", function (req, res) {
   db.Pizza.find({}, function (error, foundPizzas) {
+    const crust = db.Pizza.schema.path('crust').enumValues;
+    const size = db.Pizza.schema.path('size').enumValues;
     if (error) return res.send(error);
 
     const context = {
       pizzas: foundPizzas,
+      crustValues: crust,
+      sizeValues: size,
     };
 
     res.render("pizza/index", context);
