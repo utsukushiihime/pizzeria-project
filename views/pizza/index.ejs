@@ -25,7 +25,13 @@
   <div class="container">
     <div class="row">
       <h1>Pizzas</h1>
-      
+      <% for( let i = 0; i < crustValues.length; i++ ) { %>
+        <%= crustValues[i] %> 
+      <% } %>
+        <br>
+      <% for( let i = 0; i < sizeValues.length; i++ ) { %>
+        <%= sizeValues[i] %> 
+      <% } %>
     </div>
   </div>
 </div>
