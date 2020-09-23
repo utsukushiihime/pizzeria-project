@@ -7,12 +7,12 @@ const bcrypt = require("bcryptjs");
 // index view /users
 router.get("/", function (req, res) {
   db.Pizza.find({}, function (error, foundPizzas) {
-    const size = db.Pizza.schema.path('size').enumValues;
-    const crust = db.Pizza.schema.path('crust').enumValues;
-    const sauce = db.Pizza.schema.path('sauce').enumValues;
-    const cheese = db.Pizza.schema.path('cheese').enumValues;
-    const toppingsMeat = db.Pizza.schema.path('toppingsMeat').enumValues;
-    const toppingsVeggie = db.Pizza.schema.path('toppingsVeggie').enumValues;
+    const size = db.Pizza.schema.path("size").enumValues;
+    const crust = db.Pizza.schema.path("crust").enumValues;
+    const sauce = db.Pizza.schema.path("sauce").enumValues;
+    const cheese = db.Pizza.schema.path("cheese").enumValues;
+    const toppingsMeat = db.Pizza.schema.path("toppingsMeat").enumValues;
+    const toppingsVeggie = db.Pizza.schema.path("toppingsVeggie").enumValues;
 
     if (error) return res.send(error);
 
@@ -33,12 +33,12 @@ router.get("/", function (req, res) {
 // new route
 router.get("/new", function (req, res) {
   db.Pizza.find({}, function (error, foundPizzas) {
-    const size = db.Pizza.schema.path('size').enumValues;
-    const crust = db.Pizza.schema.path('crust').enumValues;
-    const sauce = db.Pizza.schema.path('sauce').enumValues;
-    const cheese = db.Pizza.schema.path('cheese').enumValues;
-    const toppingsMeat = db.Pizza.schema.path('toppingsMeat').enumValues;
-    const toppingsVeggie = db.Pizza.schema.path('toppingsVeggie').enumValues;
+    const size = db.Pizza.schema.path("size").enumValues;
+    const crust = db.Pizza.schema.path("crust").enumValues;
+    const sauce = db.Pizza.schema.path("sauce").enumValues;
+    const cheese = db.Pizza.schema.path("cheese").enumValues;
+    const toppingsMeat = db.Pizza.schema.path("toppingsMeat").enumValues;
+    const toppingsVeggie = db.Pizza.schema.path("toppingsVeggie").enumValues;
 
     if (error) return res.send(error);
 
@@ -58,20 +58,35 @@ router.get("/new", function (req, res) {
 
 // new
 router.get("/new", function (req, res) {
-  
   res.render("pizza/new");
 });
 
 // create
 router.post("/", function (req, res) {
   //mongoose
+  // FIXME Convert array to string
   db.Pizza.create(req.body, function (err, createdPizza) {
+    const size = db.Pizza.schema.path("size").enumValues;
+    const crust = db.Pizza.schema.path("crust").enumValues;
+    const sauce = db.Pizza.schema.path("sauce").enumValues;
+    const cheese = db.Pizza.schema.path("cheese").enumValues;
+    const toppingsMeat = db.Pizza.schema.path("toppingsMeat").enumValues;
+    const toppingsVeggie = db.Pizza.schema.path("toppingsVeggie").enumValues;
+
     if (err) {
       console.log(err);
       return res.send(err);
     }
+    const context = {
+      sizeValues: size,
+      crustValues: crust,
+      sauceValues: sauce,
+      cheeseValues: cheese,
+      toppingsMeatValues: toppingsMeat,
+      toppingsVeggieValues: toppingsVeggie,
+    };
 
-    res.redirect("/pizza");
+    res.redirect("/pizza", context);
   });
 });
 
