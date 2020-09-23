@@ -5,17 +5,13 @@
     <nav class="my-2 my-md-0 mr-md-3">
       <a class="p-2 text-white" href="/">Menu</a>
       <a class="p-2 text-white" href="#">Tracker</a>
-
-        <!-- Example single danger button -->
       <div class="btn-group">
-        <div class="button-group dropleft">
-
-        <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          My Account
-        </button>
-        </div>
+      <div class="button-group dropleft">
+      <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        My Account
+      </button>
       </div>
-      </div>
+    </div>
     </nav>
   </div>
   <!-- END Navigation -->
@@ -29,8 +25,13 @@
       <!-- Pizza Customize Form -->
       <div class="container">
         <div class="row">
+          <div class="col-3">
+            <div class="container">          
+              <div class="row mt-3">
+
           <form action="" method="post">
-            <h3>Select Your Crust</h3>
+
+          <h4>Select Your Crust</h4>
           <select class="custom-select custom-select-lg mb-3">
             <option selected>Select Your Crust</option>
             <% for( let i = 0; i < crustValues.length; i++ ) { %>
@@ -38,7 +39,7 @@
             <% } %>
           </select>
 
-          <h3>Select Your Sauce</h3>
+          <h4>Select Your Sauce</h4>
           <select class="custom-select custom-select-lg mb-3">
             <option selected>Select Your Sauce</option>
             <% for( let i = 0; i < sauceValues.length; i++ ) { %>
@@ -46,16 +47,26 @@
             <% } %>
           </select>
 
-          <h3>Select Your Cheese</h3>
+          <h4>Select Your Cheese</h4>
           <select class="custom-select custom-select-lg mb-3">
             <option selected>Select Your Cheese</option>
             <% for( let i = 0; i < cheeseValues.length; i++ ) { %>
             <option value="<%= cheeseValues[i] %>"><%= cheeseValues[i] %></option>
             <% } %>
           </select>
-          
+              </div>
+            </div>
+          </div>
+
+        <div class="col-4">
+          <div class="container border-left">
+            <div class="row mt-3">
+              <div class="form-group mt-3">
+
           <h3>Meat Toppings</h3>
           <div class="form-check">
+            
+
             <% for( let i = 0; i < toppingsMeatValues.length; i++ ) { %>
               <input class="form-check-input" type="checkbox" value="<%= toppingsMeatValues[i] %>" id="meatToppings">
               <label class="form-check-label" for="meatToppings">
@@ -63,6 +74,14 @@
                 <% } %>
             </label>
           </div>
+          </div>
+          </div>
+        </div>
+        </div>
+          <div class="col-5">
+            <div class="container border-left">
+              <div class="row mt-3">
+                <div class="form-group mt-3">
           <h3>Veggie Toppings</h3>
           <div class="form-check">
             <% for( let i = 0; i < toppingsVeggieValues.length; i++ ) { %>
@@ -76,7 +95,10 @@
           <div class="price">
             Price: <%= pizzas.price %> 
           </div>
-
+          </div>
+        </div>
+        </div>
+        </div>
         </div>
       </form>
       </div>
