@@ -25,14 +25,62 @@
   <div class="container">
     <div class="row">
       <h1>Customize Your Pizza</h1>
-      <form action="" method="post">
-      <select class="custom-select custom-select-lg mb-3">
-        <option selected>Select Your Crust</option>
-        <% for( let i = 0; i < crustValues.length; i++ ) { %>
-        <option value="<%= crustValues[i] %>"><%= crustValues[i] %></option>
-        <% } %>
-      </select>
-    </form>
+
+      <!-- Pizza Customize Form -->
+      <div class="container">
+        <div class="row">
+          <form action="" method="post">
+            <h3>Select Your Crust</h3>
+          <select class="custom-select custom-select-lg mb-3">
+            <option selected>Select Your Crust</option>
+            <% for( let i = 0; i < crustValues.length; i++ ) { %>
+            <option value="<%= crustValues[i] %>"><%= crustValues[i] %></option>
+            <% } %>
+          </select>
+
+          <h3>Select Your Sauce</h3>
+          <select class="custom-select custom-select-lg mb-3">
+            <option selected>Select Your Sauce</option>
+            <% for( let i = 0; i < sauceValues.length; i++ ) { %>
+            <option value="<%= sauceValues[i] %>"><%= sauceValues[i] %></option>
+            <% } %>
+          </select>
+
+          <h3>Select Your Cheese</h3>
+          <select class="custom-select custom-select-lg mb-3">
+            <option selected>Select Your Cheese</option>
+            <% for( let i = 0; i < cheeseValues.length; i++ ) { %>
+            <option value="<%= cheeseValues[i] %>"><%= cheeseValues[i] %></option>
+            <% } %>
+          </select>
+          
+          <h3>Meat Toppings</h3>
+          <div class="form-check">
+            <% for( let i = 0; i < toppingsMeatValues.length; i++ ) { %>
+              <input class="form-check-input" type="checkbox" value="<%= toppingsMeatValues[i] %>" id="meatToppings">
+              <label class="form-check-label" for="meatToppings">
+                <%= toppingsMeatValues[i] %><br><br>
+                <% } %>
+            </label>
+          </div>
+          <h3>Veggie Toppings</h3>
+          <div class="form-check">
+            <% for( let i = 0; i < toppingsVeggieValues.length; i++ ) { %>
+              <input class="form-check-input" type="checkbox" value="<%= toppingsVeggieValues[i] %>" id="meatToppings">
+              <label class="form-check-label" for="meatToppings">
+                <%= toppingsVeggieValues[i] %><br><br>
+                <% } %>
+            </label>
+          </div>
+          <!-- TODO Prices for each up to 3 toppings and $0.50 after. -->
+          <div class="price">
+            Price: <%= pizzas.price %> 
+          </div>
+
+        </div>
+      </form>
+      </div>
+    <!-- END Pizza Customize Form -->
     </div>
   </div>
 </div>
