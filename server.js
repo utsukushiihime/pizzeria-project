@@ -63,6 +63,9 @@ app.use("/user", controllers.user);
 // Order Router
 app.use("/order", controllers.order);
 
+// Pizza Router
+app.use("/pizza", controllers.pizza);
+
 /* Server Listener */
 app.listen(PORT, () => {
   console.log(`Listening for client request on port ${PORT}`);

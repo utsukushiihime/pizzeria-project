@@ -19,11 +19,11 @@ router.get("/", (req, res) => {
   
   // new
   router.get("/new", (req, res) => {
-    db.User.find({}, (err, foundUsers) => {
+    db.Order.find({}, (err, foundOrders) => {
       if (err) return res.send(err);
   
       const context = {
-        user: foundUsers,
+        order: foundOrders,
       };
   
       res.render("order/new", context);
