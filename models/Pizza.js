@@ -13,9 +13,9 @@ const pizzaSchema = new mongoose.Schema(
 
     cheese: String,
 
-    toppingsMeat: String,
+    toppingsMeat: [String],
 
-    toppingsVeggie: String,
+    toppingsVeggie: [String],
 
     price: Number,
   },

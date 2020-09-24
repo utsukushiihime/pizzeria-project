@@ -43,4 +43,46 @@ $(document).ready(function () {
   for (let i = 0; i < cheese.length; i++) {
     $("#cheese").append(`<option value="${cheese[i]}">${cheese[i]} </option>`);
   }
+
+  // Meat Toppings
+  let toppingsMeat = [
+    "Pepperoni",
+    "Italian Sausage",
+    "Ham",
+    "Canadian Bacon",
+    "American Bacon",
+    "Grilled Chicken",
+    "Tofu",
+    "Crispy Crickets",
+    "Shredded Ostrich",
+    "One Massive Meatball",
+    "None",
+  ];
+
+  for (let i = 0; i < toppingsMeat.length; i++) {
+    $("#toppingsMeat").append(
+      `<option value="${toppingsMeat[i]}">${toppingsMeat[i]} </option>`
+    );
+  }
+
+  // Veggie Toppings
+  const toppingsVeggie = [
+    "Pineapple",
+    "Mushrooms",
+    "Banana Peppers",
+    "Jalapeñoface Peppers",
+    "Black Olives",
+    "Red Onions",
+    "Broccoli",
+    "Hashbrowns",
+    "Pumpkin",
+    "Avacado",
+    "None",
+  ];
+
+  for (let i = 0; i < toppingsVeggie.length; i++) {
+    $("#toppingsVeggie").append(
+      `<option value="${toppingsVeggie[i]}">${toppingsVeggie[i]} </option>`
+    );
+  }
 });
