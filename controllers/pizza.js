@@ -19,12 +19,24 @@ router.get("/", function (req, res) {
 });
 
 // new
+// router.get("/new", function (req, res) {
+//   db.Order.find({}, function (err, foundOrders) {
+//     if (err) return res.send(err);
+
+//     const context = {
+//       Orders: foundOrders,
+//     };
+
+//     res.render("pizza/new", context);
+//   });
+// });
+
 router.get("/new", function (req, res) {
   db.Order.find({}, function (err, foundOrders) {
     if (err) return res.send(err);
 
     const context = {
-      Orders: foundOrders,
+      orders: foundOrders,
     };
 
     res.render("pizza/new", context);
@@ -32,17 +44,47 @@ router.get("/new", function (req, res) {
 });
 
 // create
-router.post("/", function (req, res) {
-  //mongoose
-  db.Pizza.create(req.body, function (err, createdPizza) {
-    if (err) {
-      console.log(err);
-      return res.send(err);
-    }
+// router.post("/", function (req, res) {
+//mongoose
+//   db.Pizza.create(req.body, function (err, createdPizza) {
+//     if (err) {
+//       console.log(err);
+//       return res.send(err);
+//     }
+// TODO Make the pizza information available on the registration maybe use a partial or include
+//     res.redirect("/register");
+//   });
+// });
 
-    res.redirect("/register");
-  });
+// create
+router.post("/", async function (req, res) {
+  console.log(req.body);
+
+  try {
+    const createdPizza = await db.Pizza.create(req.body);
+    const foundOrder = await db.Order.findById(req.body.order);
+
+    foundOrder.Pizza.push(createdPizza);
+    await foundOrder.save();
+
+    res.redirect("/pizza");
+  } catch (error) {
+    console.log(error);
+    res.send({ message: "Internal server error" });
+  }
 });
+
+// // show
+// router.get("/:id", function (req, res) {
+//   db.Pizza.findById(req.params.id, function (err, foundPizza) {
+//     if (err) {
+//       console.log(err);
+//       return res.send(err);
+//     }
+//     const context = { pizza: foundPizza };
+//     res.render("pizza/show", context);
+//   });
+// });
 
 // show
 router.get("/:id", function (req, res) {

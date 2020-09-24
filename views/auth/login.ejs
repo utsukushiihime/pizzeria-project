@@ -1,32 +1,43 @@
 <!-- Header Partial -->
 <%- include("../partials/header.ejs") %>
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
-    <h5 class="my-0 mr-md-auto font-weight-normal"><a href="/"><img class="img-fluid logo" src="/images/logo-horizontal.png" alt=""></a></h5>
-    <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-2 text-white" href="/">Menu</a>
-      <a class="p-2 text-white" href="#">Tracker</a>
-	</nav>
+<div
+  class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm"
+>
+  <h5 class="my-0 mr-md-auto font-weight-normal">
+    <a href="/"
+      ><img class="img-fluid logo" src="/images/logo-horizontal.png" alt=""
+    /></a>
+  </h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-white" href="/">Menu</a>
+    <a class="p-2 text-white" href="#">Tracker</a>
+  </nav>
 </div>
 <div class="main">
-	
-	<div class="container mt-5 mx-auto" style="width: 400px;">
-		<div class="row">
-			<h1>Welcome Back!</h1>
-			<form action="/login" method="POST">
-				<div class="form-group mt-3">
-					<label for="email">Email address</label>
-					<input type="email" class="form-control" name="email" aria-describedby="email">
-					</div>
-					<div class="form-group mt-3">
-					<label for="password">Password</label>
-					<input type="password" class="form-control" name="password">
-				</div>
-				<div class="form-group pt-3">
-					<button type="submit" class="btn btn-danger">Submit</button>
-				</div>		
-			</form>
-		</div>	
-	</div>
+  <div class="container mt-5 mx-auto" style="width: 400px">
+    <div class="row">
+      <h1>Welcome Back!</h1>
+      <form action="/login" method="POST">
+        <div class="form-group mt-3">
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            aria-describedby="email"
+          />
+        </div>
+        <div class="form-group mt-3">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="password" />
+        </div>
+        <div class="form-group pt-3">
+          <button type="submit" class="btn btn-danger">Login</button>
+          <a type="button" class="btn btn-danger" href="/register">Register</a>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 <!-- Footer Partial  -->
 <%- include("../partials/footer.ejs") %>
