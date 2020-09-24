@@ -1,107 +1,98 @@
 const express = require("express");
 const router = express.Router();
+// const router = require("express").Router()
+
 const db = require("../models");
-const bcrypt = require("bcryptjs");
 
+// base route is /orders
 
-// index
-router.get("/", (req, res) => {
-    db.Order.find({}, (error, foundOrders) => {
-      if (error) return res.send(error);
-  
-      const context = {
-        orders: foundOrders,
-      };
-  
-      res.render("order/index", context);
-    });
-  });
-  
-  // new
-  router.get("/new", (req, res) => {
-    db.Order.find({}, (err, foundOrders) => {
-      if (err) return res.send(err);
-  
-      const context = {
-        order: foundOrders,
-      };
-  
-      res.render("order/new", context);
-    });
-  });
+// index view /orders
+router.get("/", async function (req, res) {
+  try {
+    const foundOrders = await db.Order.find({});
+    const context = {
+      orders: foundOrders,
+    };
+    res.render("order/index", context);
+  } catch (error) {
+    console.log(error);
+    res.send({ message: "Internal Server Error" });
+  }
+});
 
-  // create
-  router.post("/", async (req, res) => {
-    console.log(req.body);
-    try {
-      const createdOrder = await db.Order.create(req.body);
-      res.redirect("/order");
-    } catch (error) {
-      console.log(error);
-      res.send({ message: "Internal server error" });
+// new
+router.get("/new", function (req, res) {
+  res.render("order/new");
+});
+
+// create
+router.post("/", function (req, res) {
+  //mongoose
+  db.Order.create(req.body, function (err, createdOrder) {
+    if (err) {
+      console.log(err);
+      return res.send(err);
     }
+
+    res.redirect("/orders");
   });
-  
-  // show
-  router.get("/:id", function (req, res) {
-    db.Order.findById(req.params.id, function (err, foundOrder) {
+});
+
+// show
+router.get("/:id", function (req, res) {
+  db.Order.findById(req.params.id, function (err, foundOrder) {
+    if (err) {
+      console.log(err);
+      return res.send(err);
+    }
+    const context = { order: foundOrder };
+    res.render("order/show", context);
+  });
+});
+
+// edit <- view
+router.get("/:id/edit", function (req, res) {
+  db.Order.findById(req.params.id, function (err, foundOrder) {
+    if (err) {
+      console.log(err);
+      return res.send(err);
+    }
+    const context = { order: foundOrder };
+    res.render("order/edit", context);
+  });
+});
+
+// update <- db change
+router.put("/:id", function (req, res) {
+  db.Order.findByIdAndUpdate(req.params.id, req.body, { new: true }, function (
+    err,
+    updatedOrder
+  ) {
+    if (err) {
+      console.log(err);
+      return res.send(err);
+    }
+
+    res.redirect(`/orders/${updatedOrder._id}`);
+  });
+});
+
+// delete
+router.delete("/:id", function (req, res) {
+  db.Order.findByIdAndDelete(req.params.id, function (err, deletedOrder) {
+    if (err) {
+      console.log(err);
+      return res.send(err);
+    }
+
+    db.Order.remove({ order: deletedOrder._id }, function (err, removedOrder) {
       if (err) {
         console.log(err);
         return res.send(err);
       }
-      const context = { order: foundOrder };
-      res.render("order/show", context);
+      res.redirect("/orders");
     });
   });
-  
-  // edit
-  router.get("/:id/edit", function (req, res) {
-    db.Order.findById(req.params.id, function (err, foundOrder) {
-      if (err) {
-        console.log(err);
-        return res.send(err);
-      }
-      const context = { orders: foundOrder };
-      res.render("order/edit", context);
-    });
-  });
-  
-  // update
-  router.put("/:id", function (req, res) {
-    db.Order.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true },
-      function (err, updatedOrder) {
-        if (err) {
-          console.log(err);
-          return res.send(err);
-        }
-        res.redirect(`/orders/${updatedOrder._id}`);
-      }
-    );
-  });
-  
-  // delete
-  router.delete("/:id", function (req, res) {
-    db.Order.findByIdAndDelete(req.params.id, function (err, deletedOrder) {
-      if (err) {
-        console.log(err);
-        return res.send(err);
-      }
-  
-      db.User.findById(deletedOrder.user, function (err, foundUser) {
-        if (err) {
-          console.log(err);
-          return res.send(err);
-        }
-  
-        foundUser.orders.remove(deletedOrder);
-        foundUser.save();
-  
-        res.redirect("/orders");
-      });
-    });
-  });
-  
+});
+
 module.exports = router;

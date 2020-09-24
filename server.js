@@ -1,10 +1,9 @@
 /* External Modules */
 const express = require("express");
-const path = require('path');
+const path = require("path");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
-
 
 /* Internal Modules */
 const db = require("./models");
@@ -19,7 +18,7 @@ const PORT = 3000;
 app.set("view engine", "ejs");
 
 /* Middleware */
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.originalUrl}`);
@@ -62,10 +61,7 @@ app.use("/", controllers.auth);
 app.use("/user", controllers.user);
 
 // Order Router
-app.use("/order", controllers.order);
-
-// Pizza Router
-app.use("/pizza", controllers.pizza);
+app.use("/orders", authRequired, controllers.order);
 
 /* Server Listener */
 app.listen(PORT, () => {
