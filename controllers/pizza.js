@@ -40,7 +40,7 @@ router.post("/", function (req, res) {
       return res.send(err);
     }
 
-    res.redirect("/pizza");
+    res.redirect("/register");
   });
 });
 
