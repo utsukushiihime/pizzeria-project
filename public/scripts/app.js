@@ -2,8 +2,12 @@ console.log("This is accessible");
 
 // This works with EJS so I am leaving it until I find a better solution
 $(document).ready(function () {
-  // Pizza Price
-  $('input[name="price"]').val("15");
+  // Size Options
+  const size = ["Rocket Slice", "Frisbee", "Moon", "Planet", "FSM"];
+
+  for (let i = 0; i < size.length; i++) {
+    $("#size").append(`<option value="${size[i]}">${size[i]} </option>`);
+  }
 
   // Crust Options
   const crust = [

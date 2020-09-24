@@ -33,7 +33,13 @@
               <form action="/pizza" method="POST">
               
               <!-- Left Column Options -->
+              
               <div class="form-group">
+              <label for="sizeValues">Select Your Size</label>
+              <select id="size"  class="form-control mb-3" name="size">
+                <option selected>Make a selection</option>
+              </select>
+
               <label for="crustValues">Select Your Crust</label>
               <select id="crust"  class="form-control mb-3" name="crust">
                 <option selected>Make a selection</option>
@@ -102,17 +108,8 @@
               </div>
                 </div>
     
-                <div class="price col">
-                  Price:  
-                  <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">$</span>
-                  </div>
-                  <input id="price" type="text" name="price" class="form-control" aria-label="Amount (to the nearest dollar)" disabled>
-                  <div class="input-group-append">
-                    <span class="input-group-text">.00</span>
-                  </div>
-                </div>
+                <div id="price" class="price col">$
+                    <input type="text" name="price" value="15" >
                 </div>
               </div>
             </div>
