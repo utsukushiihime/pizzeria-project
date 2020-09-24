@@ -33,28 +33,25 @@
               <form action="/pizza" method="POST">
               
               <!-- Left Column Options -->
-              <h5>Select Your Crust</h5>
-              <select class="custom-select custom-select-lg mb-3">
-                <option selected>Select Your Crust</option>
-                <% for( let i = 0; i < crustValues.length; i++ ) { %>
-                <option value="<%= crustValues[i] %>"><%= crustValues[i] %></option>
-                <% } %>
+              <div class="form-group">
+              <label for="crustValues">Select Your Crust</label>
+              <select class="form-control mb-3" name="crust">
+                <option selected>Make a selection</option>
+                <option value="Thin Crust">Thin Crust</option>
               </select>
 
-              <h5>Select Your Sauce</h5>
-              <select class="custom-select custom-select-lg mb-3">
-                <option selected>Select Your Sauce</option>
-                <% for( let i = 0; i < sauceValues.length; i++ ) { %>
-                <option value="<%= sauceValues[i] %>"><%= sauceValues[i] %></option>
-                <% } %>
+              <label for="sauceValues">Select Your Sauce</label>
+              <select class="form-control mb-3" name="sauce">
+                <option selected>Make a selection</option>
+                <option value="Spicy Marinara">Spicy Marinara</option>
               </select>
-
-              <h5>Select Your Cheese</h5>
-              <select class="custom-select custom-select-lg mb-3">
-                <option selected>Select Your Cheese</option>
-                <% for( let i = 0; i < cheeseValues.length; i++ ) { %>
-                <option value="<%= cheeseValues[i] %>"><%= cheeseValues[i] %></option><% } %>
+ 
+              <label for="sauceValues">Select Your Cheese</label>
+              <select class="form-control mb-3" name="cheese">
+                <option selected>Make a selection</option>
+                <option value="Mozzerella">Mozzerella</option>
               </select>
+              </div>
                 </div>
               </div>
           </div>
@@ -67,11 +64,9 @@
                     <div class="form-group mt-3">
                     <h3>Meat Toppings</h3>
                     <div class="form-check">
-                    <% for( let i = 0; i < toppingsMeatValues.length; i++ ) { %>
-                    <input class="form-check-input" type="checkbox" value="<%= toppingsMeatValues[i] %>" id="meatToppings">
+                    <input class="form-check-input" type="checkbox" name="toppingsMeat" value="Pepperoni" id="toppingsMeat">
                     <!-- TODO Fix Form Styling for checkboxes -->
-                    <label class="form-check-label" for="meatToppings"><%= toppingsMeatValues[i] %><% } %>
-                    </label>
+                    <label class="form-check-label" for="toppingsMeat">Pepperoni</label>
                     </div>
                   </div>
                 </div>
@@ -86,10 +81,10 @@
                   <div class="form-group mt-3">
                   <h3>Veggie Toppings</h3>
                   <div class="form-check">
-                    <% for( let i = 0; i < toppingsVeggieValues.length; i++ ) { %>
-                      <input class="form-check-input" type="checkbox" value="<%= toppingsVeggieValues[i] %>" id="meatToppings">
+                      <input class="form-check-input" type="checkbox" name="toppingsVeggie" value="Banana Peppers" id="veggieToppings">
+                      
                       <!-- TODO Fix Form Styling for checkboxes -->
-                      <label class="form-check-label" for="meatToppings"><%= toppingsVeggieValues[i] %><% } %></label>
+                      <label class="form-check-label" for="toppingsVeggie">Banana Peppers</label>
                   </div>
               </div>
             </div>
@@ -98,6 +93,8 @@
             <!-- END Right Column Options -->
           </div>
             <!-- TODO Prices for each up to 3 toppings and $0.50 after. -->
+
+
               <div class="name">
               Name:  
               <div class="input-group mb-3">

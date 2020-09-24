@@ -1,112 +1,64 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../models");
-const bcrypt = require("bcryptjs");
 
-// base path /
-// index view /users
+const db = require("../models");
+
+// base route is /pizzas
+
+// index
 router.get("/", function (req, res) {
   db.Pizza.find({}, function (error, foundPizzas) {
-    const size = db.Pizza.schema.path("size").enumValues;
-    const crust = db.Pizza.schema.path("crust").enumValues;
-    const sauce = db.Pizza.schema.path("sauce").enumValues;
-    const cheese = db.Pizza.schema.path("cheese").enumValues;
-    const toppingsMeat = db.Pizza.schema.path("toppingsMeat").enumValues;
-    const toppingsVeggie = db.Pizza.schema.path("toppingsVeggie").enumValues;
-
     if (error) return res.send(error);
 
     const context = {
-      pizzas: foundPizzas,
-      sizeValues: size,
-      crustValues: crust,
-      sauceValues: sauce,
-      cheeseValues: cheese,
-      toppingsMeatValues: toppingsMeat,
-      toppingsVeggieValues: toppingsVeggie,
+      Pizzas: foundPizzas,
     };
 
     res.render("pizza/index", context);
   });
 });
 
-// new route
+// new
 router.get("/new", function (req, res) {
-  db.Pizza.find({}, function (error, foundPizzas) {
-    const size = db.Pizza.schema.path("size").enumValues;
-    const crust = db.Pizza.schema.path("crust").enumValues;
-    const sauce = db.Pizza.schema.path("sauce").enumValues;
-    const cheese = db.Pizza.schema.path("cheese").enumValues;
-    const toppingsMeat = db.Pizza.schema.path("toppingsMeat").enumValues;
-    const toppingsVeggie = db.Pizza.schema.path("toppingsVeggie").enumValues;
-
-    if (error) return res.send(error);
+  db.Order.find({}, function (err, foundOrders) {
+    if (err) return res.send(err);
 
     const context = {
-      pizzas: foundPizzas,
-      sizeValues: size,
-      crustValues: crust,
-      sauceValues: sauce,
-      cheeseValues: cheese,
-      toppingsMeatValues: toppingsMeat,
-      toppingsVeggieValues: toppingsVeggie,
+      Orders: foundOrders,
     };
 
     res.render("pizza/new", context);
   });
 });
 
-// new
-router.get("/new", function (req, res) {
-  res.render("pizza/new");
-});
-
 // create
 router.post("/", function (req, res) {
   //mongoose
-  // FIXME Convert array to string
   db.Pizza.create(req.body, function (err, createdPizza) {
-    const size = db.Pizza.schema.path("size").enumValues;
-    const crust = db.Pizza.schema.path("crust").enumValues;
-    const sauce = db.Pizza.schema.path("sauce").enumValues;
-    const cheese = db.Pizza.schema.path("cheese").enumValues;
-    const toppingsMeat = db.Pizza.schema.path("toppingsMeat").enumValues;
-    const toppingsVeggie = db.Pizza.schema.path("toppingsVeggie").enumValues;
-
     if (err) {
       console.log(err);
       return res.send(err);
     }
-    const context = {
-      sizeValues: size,
-      crustValues: crust,
-      sauceValues: sauce,
-      cheeseValues: cheese,
-      toppingsMeatValues: toppingsMeat,
-      toppingsVeggieValues: toppingsVeggie,
-    };
 
-    res.redirect("/pizza", context);
+    res.redirect("/pizza");
   });
 });
 
 // show
 router.get("/:id", function (req, res) {
-  db.Pizza.findById(req.params.id)
-    .populate("orders")
-    .exec(function (err, found) {
-      if (err) {
-        console.log(err);
-        return res.send(err);
-      }
-      const context = { pizza: foundPizza };
-      res.render("pizza/show", context);
-    });
+  db.Pizza.findById(req.params.id, function (err, foundPizza) {
+    if (err) {
+      console.log(err);
+      return res.send(err);
+    }
+    const context = { pizza: foundPizza };
+    res.render("pizza/show", context);
+  });
 });
 
-// edit <- view
-router.get("/:id/edit", (req, res) => {
-  db.Pizza.findById(req.params.id, (err, foundPizza) => {
+// edit
+router.get("/:id/edit", function (req, res) {
+  db.Pizza.findById(req.params.id, function (err, foundPizza) {
     if (err) {
       console.log(err);
       return res.send(err);
@@ -116,21 +68,40 @@ router.get("/:id/edit", (req, res) => {
   });
 });
 
-// update <- db change
-router.put("/:id", (req, res) => {
-  db.Pizza.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    { new: true },
-    (err, updatedPizza) => {
+// update
+router.put("/:id", function (req, res) {
+  db.Pizza.findByIdAndUpdate(req.params.id, req.body, { new: true }, function (
+    err,
+    updatedPizza
+  ) {
+    if (err) {
+      console.log(err);
+      return res.send(err);
+    }
+    res.redirect(`/pizzas/${updatedPizza._id}`);
+  });
+});
+
+// delete
+router.delete("/:id", function (req, res) {
+  db.Pizza.findByIdAndDelete(req.params.id, function (err, deletedPizza) {
+    if (err) {
+      console.log(err);
+      return res.send(err);
+    }
+
+    db.Order.findById(deletedPizza.Order, function (err, foundOrder) {
       if (err) {
         console.log(err);
         return res.send(err);
       }
 
-      res.redirect(`/pizza/${updatedPizza._id}`);
-    }
-  );
+      foundOrder.Pizzas.remove(deletedPizza);
+      foundOrder.save();
+
+      res.redirect("/pizzas");
+    });
+  });
 });
 
 module.exports = router;
