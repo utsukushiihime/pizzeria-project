@@ -22,11 +22,18 @@
 <div class="main">
     <div class="container">
         <div class="row">
-          <h1>Order Show</h1>
+          <h1>Order Details</h1>
             <h4>Order ID: <%= order._id %></h4>
             <p>
                 <b>Name:</b> <%= order.name %><br>
-                <b>CreatedAt:</b> <%= order.createdAt %> 
+                <b>Order Confirmation:</b> <%= order._id %> <br>
+                <b>Order Date:</b> <%= order.createdAt %> <br>
+                <b>Size:</b> <%= order.size %> <br>
+                <b>Crust:</b> <%= order.crust %> <br>
+                <b>Sauce:</b> <%= order.sauce %> <br>
+                <b>Cheese:</b> <%= order.cheese %> <br>
+                <b>Meat Toppings:</b> <%= order.toppingsMeat %> <br>
+                <b>Veggie Toppings:</b> <%= order.toppingsVeggie %> 
             </p>
         </div>
     </div>
