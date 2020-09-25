@@ -12,7 +12,7 @@ $(document).ready(function () {
     if (sizeValues === "Rocket Slice") {
       let price = 8;
       let priceVal = parseInt(price);
-      console.log(sizeValues, priceVal);
+
       $("input:hidden").val(`${priceVal}`);
     } else if (sizeValues === "Frisbee") {
       let price = 16;
