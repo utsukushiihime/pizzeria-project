@@ -24,9 +24,7 @@
           My Account
         </button>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="/orders/"
-            ><i class="fas fa-pizza-slice"></i> View Orders</a
-          >
+          <a class="dropdown-item" href="/orders/"><i class="fas fa-pizza-slice"></i> View Orders</a>
           <div class="dropdown-divider"></div>
           <div class="dropdown-item">
             <form action="/logout?_method=DELETE" method="POST">
@@ -48,41 +46,6 @@
     <div class="row">
       <h1>Customize Your Pizza</h1>
 
-  <!-- scrapped pricing solution  -->
-  <!-- <table>
-    <tr>
-      <td> Rocket Slice of Pizza </td>
-    </tr>
-    <tr>
-      <td> $4</td>
-    </tr>
-    <tr>
-      <td> Frisbee Size Pizza </td>
-    </tr>
-    <tr>
-      <td> $8 </td>
-    </tr>
-    <tr>
-      <td> Moon Size Pizza </td>
-    </tr>
-    <tr>
-      <td> $12 </td>
-    </tr>
-    <tr>
-      <td> Planet Size Pizza </td>
-    </tr>
-    <tr>
-      <td> $16 </td>
-    </tr>
-    <tr>
-      <td> FSM Size Pizza </td>
-    </tr>
-    <tr>
-      <td> $21, forklift not included. </td>
-    </tr>
-
-  </table> -->
-
       <!-- Pizza Customize -->
       <div class="container">
         <div class="row">
@@ -90,25 +53,29 @@
             <div class="container">          
               <div class="row mt-3">
                 <!-- Form Start -->
-              <form action="/orders" method="POST">
+              <form id="order" action="/orders" method="POST">
               
               <!-- Left Column Options -->
               
               <div class="form-group">
               <label for="sizeValues">Select Your Size</label>
               <select id="size" class="form-control mb-3" name="size">
+                <option value="Make a selection">Make a selection</option>
               </select>
 
               <label for="crustValues">Select Your Crust</label>
               <select id="crust" class="form-control mb-3" name="crust">
+                <option value="Make a selection">Make a selection</option>
               </select>
 
               <label for="sauceValues">Select Your Sauce</label>
               <select id="sauce" class="form-control mb-3" name="sauce">
+                <option value="Make a selection">Make a selection</option>
               </select>
  
               <label for="cheeseValues">Select Your Cheese</label>
               <select id="cheese" class="form-control mb-3" name="cheese">
+                <option value="Make a selection">Make a selection</option>
               </select>
               </div>
                 </div>
@@ -150,22 +117,11 @@
               </div>
             <!-- END Right Column Options -->
           </div>
-            <!-- TODO Prices for each up to 3 toppings and $0.50 after. -->
 
             <div class="container">
               <div class="row">
-                <div class="name col">
-                Name:  
-                <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">@</span>
-                </div>
-                <input type="text" name="name" class="form-control" aria-label="Who is this for?">
-              </div>
-                </div>
-    
-                <div id="price" class="price col">$
-                    <input type="text" name="price" value="15" >
+                <div id="price" class="price mb-3">
+                    <input type="text" name="price" value="" hidden>
                 </div>
               </div>
             </div>
