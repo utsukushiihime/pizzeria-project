@@ -106,7 +106,7 @@ order archive
 // The classic go-to pizza, appropriate for any occasion be it a child's birthday party, student study group, or an office celebration, this pizza is your social ticket in. 
 
 // Hawaiian
-// It's a little known fact this sweet build actually originated from Canada rather than the palmed Hawaiian islands. One of the most popular pizzas in the contemporary world, picking this is a always a win.
+// It's a little known fact this sweet build actually originated from Canada rather than the palmed Hawaiian islands. Regardless, cheese and meat topped in sweet is one of the most popular pizzas in the contemporary world. This pizza is a always a win.
 
 // Meat Lover's 
 // Not only for lumberjacks and people born on the east coast, this pizza is loaded with protein and flavor.
