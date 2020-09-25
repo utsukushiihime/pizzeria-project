@@ -9,6 +9,19 @@ $(document).ready(function () {
     $("#size").append(`<option value="${size[i]}">${size[i]} </option>`);
   }
 
+
+//  // 4, 8, 12, 16, 21
+//     if $("#size")(`<option value ="${size[0]} </option>`);
+
+//     $("").change(`$("#price")`) 
+
+$("#size").change(function() {
+  $("#price").innerText(`${dynamicPriceText}`)
+  )}
+
+//  itemID = document.getElementById("")
+
+
   // Crust Options
   const crust = [
     "Nano-Thin",
