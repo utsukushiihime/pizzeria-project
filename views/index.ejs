@@ -10,7 +10,7 @@
   </h5>
   <nav class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-white" href="/">Menu</a>
-    <a class="p-2 text-white" href="#">Tracker</a>
+    
     <% if(user) { %>
     <!-- Example single danger button -->
     <div class="btn-group">
@@ -60,8 +60,8 @@
     <div class="row">
       <div class="row row-cols-1 row-cols-md-1">
         <div class="col mb-12 mt-3">
-          <h3>
-            <% if(user) { %> Welcome, <%= user.username %> <% } else { %>
+          <h3 class="text-capitalize font-weight-lighter">
+            <% if(user) { %> Greetings, <span class="text-white"> <%= user.username %></span> <% } else { %>
             Welcome to Planet Pizza! <% } %>
           </h3>
           <div class="row mb-1">
@@ -74,10 +74,9 @@
                     >SPECIAL</strong
                   >
                   <h4 class="mb-0">Pepperoni</h4>
-                  <div class="mb-1 text-white">$15.99</div>
-                  <p class="card-text mb-auto">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content.
+                  <div class="mb-1 text-white">Fresh Grown</div>
+                  <p class="card-text mb-3">
+                    Pizza ipsum dolor amet chicago style stuffed crust chicken large meatball pan green bell peppers bbq rib sausage platter.
                   </p>
                   <% if(user) { %>
                   <a
@@ -112,10 +111,9 @@
                     >SPECIAL</strong
                   >
                   <h4 class="mb-0">Hawaiian</h4>
-                  <div class="mb-1 text-white">$15.99</div>
-                  <p class="card-text mb-auto">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content.
+                  <div class="mb-1 text-white">Organic</div>
+                  <p class="card-text mb-3">
+                    Thin crust bacon white pizza, sauteed onions thin crust bbq deep crust ricotta garlic peppers ham bbq sauce.
                   </p>
                   <% if(user) { %>
                   <a
@@ -160,10 +158,9 @@
                       srcset=""
                     />
                   </div>
-                  <div class="mb-1 text-white">$15.99</div>
-                  <p class="card-text mb-auto">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content.
+                  <div class="mb-1 text-white">Fresh</div>
+                  <p class="card-text mb-3">
+                    Deep crust sausage white garlic extra cheese bacon white pizza bbq sauce black olives sauteed onions.
                   </p>
                   <% if(user) { %>
                   <a
@@ -197,10 +194,9 @@
                       srcset=""
                     />
                   </div>
-                  <div class="mb-1 text-white">$18.99</div>
-                  <p class="card-text mb-auto">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content.
+                  <div class="mb-1 text-white">Delicious</div>
+                  <p class="card-text mb-3">
+                    Sauteed onions lasagna string cheese, hawaiian sausage onions sausage thin crust.
                   </p>
                   <% if(user) { %>
                   <a
