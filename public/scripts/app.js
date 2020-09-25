@@ -76,6 +76,7 @@ $(document).ready(function () {
     "Pure Parmesan",
     "Blended Mix",
     "Aorta Special",
+    "Dairy Free",
     "None",
   ];
 
@@ -125,3 +126,7 @@ $(document).ready(function () {
     );
   }
 });
+<<<<<<< HEAD
+
+=======
+>>>>>>> b06342b3718ead14f3d712726c9c646134e85a57
