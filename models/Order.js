@@ -4,8 +4,6 @@ const orderSchema = new mongoose.Schema(
   {
     name: { type: String },
 
-    user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-
     size: { type: String, required: true },
 
     crust: { type: String, required: true },
@@ -25,6 +23,15 @@ const orderSchema = new mongoose.Schema(
     createdAt: "createdAt",
   }
 );
+
+orderSchema.pre("save", () => {
+  console.log(this);
+});
+
+orderSchema.post("save", (doc, next) => {
+  console.log(doc);
+  next();
+});
 
 const Order = mongoose.model("Order", orderSchema);
 
