@@ -10,8 +10,6 @@
   </h5>
   <nav class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-white" href="/">Menu</a>
-    
-   
     <div class="btn-group">
       <div class="button-group dropleft">
         <button
@@ -39,13 +37,11 @@
   </nav>
 </div>
 <!-- END Navigation -->
-
 <!-- Main -->
 <div class="main">
   <div class="container">
     <div class="row">
       <h1>Customize Your Pizza</h1>
-
       <!-- Pizza Customize -->
       <div class="container">
         <div class="row">
@@ -54,43 +50,37 @@
               <div class="row mt-3">
                 <!-- Form Start -->
               <form id="order" action="/orders" method="POST">
-              
               <!-- Left Column Options -->
-              
               <div class="form-group">
               <label for="sizeValues">Select Your Size</label>
               <select id="size" class="form-control mb-3" name="size">
-                <option value="Make a selection">Size</option>
+                <option value="Make a selection">Make a selection</option>
               </select>
-
               <label for="crustValues">Select Your Crust</label>
               <select id="crust" class="form-control mb-3" name="crust">
-                <option value="Make a selection">Crust</option>
+                <option value="Make a selection">Make a selection</option>
               </select>
-
               <label for="sauceValues">Select Your Sauce</label>
               <select id="sauce" class="form-control mb-3" name="sauce">
-                <option value="Make a selection">Sauce</option>
+                <option value="Make a selection">Make a selection</option>
               </select>
- 
               <label for="cheeseValues">Select Your Cheese</label>
               <select id="cheese" class="form-control mb-3" name="cheese">
-                <option value="Make a selection">Cheese</option>
+                <option value="Make a selection">Make a selection</option>
               </select>
               </div>
                 </div>
               </div>
           </div>
               <!-- END Left Column Options -->
-
               <!-- Center Column Options -->
               <div class="col-4">
                 <div class="container border-left">
                   <div class="row mt-3">
                     <div class="form-group mt-3">
-                    <h3>Tasty Meat Options. Be Adventurous. </h3>
+                    <h3>Meat Toppings</h3>
+                    <h6 class="text-lowercase">Select multiple toppings <kbd><kbd>cmd/ctrl</kbd> + <kbd>click</kbd></kbd></h6>
                       <div class="form-group">
-                      <label for="toppingsMeat">(press cmd / ctl to select multiple)</label>
                       <select multiple class="form-control" id="toppingsMeat" name="toppingsMeat">
                       </select>
                     </div>
@@ -99,15 +89,14 @@
               </div>
               </div>
             <!-- END Center Column Options -->
-
             <!-- Right Column Options -->
               <div class="col-4">
                 <div class="container border-left">
                   <div class="row mt-3">
                     <div class="form-group mt-4">
-                    <h3>Make your mother proud by adding some veggies</h3>
+                    <h3>Veggie Toppings</h3>
                       <div class="form-group">
-                      <label for="toppingsVeggie">(press cmd / ctl to select multiple)</label>
+                      <h6 class="text-lowercase">Select multiple toppings <kbd><kbd>cmd/ctrl</kbd> + <kbd>click</kbd></kbd></h6></label>
                       <select multiple class="form-control" id="toppingsVeggie" name="toppingsVeggie">
                       </select>
                     </div>
@@ -117,7 +106,6 @@
               </div>
             <!-- END Right Column Options -->
           </div>
-
             <div class="container">
               <div class="row">
                 <div id="price" class="price mb-3">
@@ -134,5 +122,5 @@
   </div>
 </div>
 <!-- END Main -->
-
 <%- include("../partials/footer.ejs") %>
+
