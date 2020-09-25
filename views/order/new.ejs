@@ -53,7 +53,7 @@
             <div class="container">          
               <div class="row mt-3">
                 <!-- Form Start -->
-              <form action="/orders" method="POST">
+              <form id="order" action="/orders" method="POST">
               
               <!-- Left Column Options -->
               
@@ -120,8 +120,8 @@
 
             <div class="container">
               <div class="row">
-                <div id="price" class="price mb-3">$
-                    <input type="text" name="price" value="">
+                <div id="price" class="price mb-3">
+                    <input type="text" name="price" value="" hidden>
                 </div>
               </div>
             </div>

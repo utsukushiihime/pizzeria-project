@@ -3,19 +3,46 @@ console.log("This is accessible");
 // This works with EJS so I am leaving it until I find a better solution
 $(document).ready(function () {
   $("select#size").change(function () {
+    // set price of item
+
+    // set price by value selected
     let sizeValues = $(this).children("option:selected").val();
+
     if (sizeValues === "Rocket Slice") {
-      $("input:text").val("4");
+      let price = 4;
+      let priceVal = parseInt(price);
+      console.log(sizeValues, priceVal);
+      $("input:hidden").val(`${priceVal}`);
+    } else if (sizeValues === "Frisbee") {
+      let price = 8;
+      let priceVal = parseInt(price);
+      console.log(sizeValues, priceVal);
+      $("input:hidden").val(`${priceVal}`);
+    } else if (sizeValues === "Moon") {
+      let price = 12;
+      let priceVal = parseInt(price);
+      console.log(sizeValues, priceVal);
+      $("input:hidden").val(`${priceVal}`);
+    } else if (sizeValues === "Planet") {
+      let price = 16;
+      let priceVal = parseInt(price);
+      console.log(sizeValues, priceVal);
+      $("input:hidden").val(`${priceVal}`);
+    } else if (sizeValues === "FSM") {
+      let price = 21;
+      let priceVal = parseInt(price);
+      console.log(sizeValues, priceVal);
+      $("input:hidden").val(`${priceVal}`);
     }
     alert("You have selected the size - " + sizeValues);
   });
 
   // if size selected === x then price
   // if Rocket Slice selected then price 4
-  // if Rocket Slice selected then price 8
-  // if Rocket Slice selected then price 12
-  // if Rocket Slice selected then price 16
-  // if Rocket Slice selected then price 21
+  // if Frisbee selected then price 8
+  // if Moon selected then price 12
+  // if Planet selected then price 16
+  // if FSM selected then price 21
 
   // if meat topping selected > 1 then add $1.50 per
   // if veggie toppings selected > 3 then add $0.50 per
