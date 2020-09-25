@@ -1,15 +1,13 @@
 const express = require("express");
 const router = express.Router();
-// const router = require("express").Router()
-
+const bcrypt = require("bcryptjs");
 const db = require("../models");
-
-// base route is /orders
 
 // index view /orders
 router.get("/", async function (req, res) {
   try {
     const foundOrders = await db.Order.find({});
+
     const context = {
       orders: foundOrders,
     };
@@ -20,14 +18,20 @@ router.get("/", async function (req, res) {
   }
 });
 
-// new
-router.get("/new", function (req, res) {
-  res.render("order/new");
+router.get("/new", (req, res) => {
+  db.User.find({}, (err, foundUser) => {
+    if (err) return res.send(err);
+
+    const context = {
+      user: foundUser,
+    };
+
+    res.render("order/new", context);
+  });
 });
 
 // create
 router.post("/", function (req, res) {
-  //mongoose
   db.Order.create(req.body, function (err, createdOrder) {
     if (err) {
       console.log(err);
