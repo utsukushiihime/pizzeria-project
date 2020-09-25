@@ -4,58 +4,73 @@
   class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm"
 >
   <h5 class="my-0 mr-md-auto font-weight-normal">
-    <a href="/"
-      ><img class="img-fluid logo" src="/images/logo-horizontal.png" alt=""
-    /></a>
+    <a href="/">
+      <img
+        class="img-fluid logo"
+        src="/images/logo-horizontal.png"
+        alt="Pizza Planet"
+      />
+    </a>
   </h5>
   <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-white" href="/">Menu</a>
-
-    <!-- Example single danger button -->
-    <div class="btn-group">
-      <div class="button-group dropleft">
-        <button
-          class="btn btn-danger btn-sm dropdown-toggle"
-          type="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          My Account
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="/orders/"
-            ><i class="fas fa-pizza-slice"></i> View Orders</a
-          >
-          <div class="dropdown-divider"></div>
-          <div class="dropdown-item">
-            <form action="/logout?_method=DELETE" method="POST">
-              <button class="dropdown-item" type="submit" value="Logout">
-                <i class="fas fa-sign-out-alt"></i> Logout
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+    <a class="btn btn-danger p-2 text-white" href="/"
+      ><i class="fas fa-pizza-slice"></i> Menu</a
+    >
   </nav>
 </div>
 <!-- END Navigation -->
 
 <!-- Main -->
 <div class="main">
-  <div class="container">
+  <div class="container mt-5">
     <div class="row">
       <h1>Orders</h1>
-      <ul>
         <% orders.forEach(order => { %>
-        <li>
-          <a href="/orders/<%= order._id %>">Order ID: <%= order._id %></a
-          ><br />
-          <span class="text-muted"> Created at: <%= order.createdAt %> </span>
-        </li>
+          
+          <div class="container mt-5">
+      <div class="row">
+        <p class="lead"><h1>Order Details</h1>
+          <h6>Order ID:<span class="text-white"> <a href="/orders/<%= order._id %>"><%= order._id %></a></span></h6>
+          
+            <div class="container">
+              <div class="row">
+                <div class="col">  
+                  <div class="badge badge-danger text-wrap text-right mb-4 mt-2" style="width: 6rem;">
+                    Pizza Size
+                  </div> <%= order.size %></div>
+                <div class="col">
+                  <div class="badge badge-primary text-wrap text-right mb-4 mt-2" style="width: 6rem;">
+                    Crust
+                  </div> <%= order.crust %></div>
+                <div class="w-100"></div>
+                <div class="col">
+                  <div class="badge badge-primary text-wrap text-right mb-4 mt-2" style="width: 6rem;">
+                    Sauce
+                  </div> <%= order.sauce %></div>
+                <div class="col">
+                  <div class="badge badge-primary text-wrap text-right mb-4 mt-2" style="width: 6rem;">
+                    Cheese
+                  </div> <%= order.cheese %></div>
+                  <div class="w-100"></div>
+                <div class="col">
+                  <div class="badge badge-primary text-wrap text-right mb-4 mt-2" style="width: 6rem;">
+                    Meat Toppings
+                  </div> <%= order.toppingsMeat %></div>
+                <div class="col">
+                  <div class="badge badge-primary text-wrap text-right mb-4 mt-2" style="width: 6rem;">
+                    Veggie Toppings
+                  </div> <%= order.toppingsVeggie %></div>
+                  
+              </div>
+            </div>
+            <b>Total</b> 
+            <h2 class="mt-2">$<%= order.price %></h2> 
+            <hr>
+          </p>
+      </div>
+    </div>
+          
         <% }) %>
-      </ul>
     </div>
   </div>
 </div>
