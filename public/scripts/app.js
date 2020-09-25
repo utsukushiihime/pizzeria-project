@@ -76,6 +76,7 @@ $(document).ready(function () {
     "Pure Parmesan",
     "Blended Mix",
     "Aorta Special",
+    "Dairy Free",
     "None",
   ];
 
@@ -126,14 +127,3 @@ $(document).ready(function () {
   }
 });
 
-// Dynamic pricing that has temporarily been put on the back-burnner 
-//  Size to $: 4, 8, 12, 16, 21
-//     if $("#size")(`<option value ="${size[0]} </option>`);
-
-//     $("").change(`$("#price")`) 
-
-// $("#size").change(function() {
-//   $("#price").innerText(`${dynamicPriceText}`)
-//   )}
-
-//  itemID = document.getElementById("")
