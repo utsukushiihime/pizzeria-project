@@ -47,7 +47,6 @@
       <h1>Order Details</h1>
       <h4>Order ID: <%= order._id %></h4>
       <p>
-        <b>Name:</b> <%= order.name %><br />
         <b>Order Confirmation:</b> <%= order._id %> <br />
         <b>Order Date:</b> <%= order.createdAt %> <br />
         <b>Size:</b> <%= order.size %> <br />
@@ -56,6 +55,9 @@
         <b>Cheese:</b> <%= order.cheese %> <br />
         <b>Meat Toppings:</b> <%= order.toppingsMeat %> <br />
         <b>Veggie Toppings:</b> <%= order.toppingsVeggie %>
+        <hr>
+        <b>Total:</b> 
+        <h4>$<%= order.price %></h4> 
       </p>
     </div>
   </div>

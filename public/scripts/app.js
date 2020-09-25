@@ -2,25 +2,34 @@ console.log("This is accessible");
 
 // This works with EJS so I am leaving it until I find a better solution
 $(document).ready(function () {
+  $("select#size").change(function () {
+    let sizeValues = $(this).children("option:selected").val();
+    if (sizeValues === "Rocket Slice") {
+      $("input:text").val("4");
+    }
+    alert("You have selected the size - " + sizeValues);
+  });
+
+  // if size selected === x then price
+  // if Rocket Slice selected then price 4
+  // if Rocket Slice selected then price 8
+  // if Rocket Slice selected then price 12
+  // if Rocket Slice selected then price 16
+  // if Rocket Slice selected then price 21
+
+  // if meat topping selected > 1 then add $1.50 per
+  // if veggie toppings selected > 3 then add $0.50 per
+  // add total of the values and push to price
+
+  // FIXME Possible solution for detecting input change
+  // $(document).on("change", "input", function () {});
+
   // Size Options
   const size = ["Rocket Slice", "Frisbee", "Moon", "Planet", "FSM"];
 
   for (let i = 0; i < size.length; i++) {
     $("#size").append(`<option value="${size[i]}">${size[i]} </option>`);
   }
-
-
-//  // 4, 8, 12, 16, 21
-//     if $("#size")(`<option value ="${size[0]} </option>`);
-
-//     $("").change(`$("#price")`) 
-
-$("#size").change(function() {
-  $("#price").innerText(`${dynamicPriceText}`)
-  )}
-
-//  itemID = document.getElementById("")
-
 
   // Crust Options
   const crust = [

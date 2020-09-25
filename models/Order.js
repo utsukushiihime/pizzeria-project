@@ -2,8 +2,6 @@ const mongoose = require("mongoose");
 
 const orderSchema = new mongoose.Schema(
   {
-    name: { type: String },
-
     size: { type: String, required: true },
 
     crust: { type: String, required: true },
