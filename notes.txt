@@ -96,9 +96,11 @@ order archive
 // if choosing pepperoni pepperoni seleted === true (etc)
 // 
 
-
 // Tasty meat options for your pizza 
+// (press cmd / ctl to select multiple options)
+
 // Make your mother proud by adding some veggies 
+// (press cmd / ctl to select multiple options)
 
 // Pepperoni 
 // The classic go-to pizza, appropriate for any occasion be it a child's birthday party, student study group, or an office celebration, this pizza is your social ticket in. 
