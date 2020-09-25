@@ -2,17 +2,14 @@
 <!-- Navigation -->
 <div
   class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm"
->
+  >
   <h5 class="my-0 mr-md-auto font-weight-normal">
     <a href="/"
       ><img class="img-fluid logo" src="/images/logo-horizontal.png" alt=""
-    /></a>
+      /></a>
   </h5>
   <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-white" href="/">Menu</a>
-    
     <% if(user) { %>
-    <!-- Example single danger button -->
     <div class="btn-group">
       <div class="button-group dropleft">
         <button
@@ -21,24 +18,24 @@
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
-        >
-          My Account
+          >
+        My Account
         </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="/user/<%= user.id %>"
             ><i class="fas fa-user"></i> View Account</a
-          >
+            >
           <a class="dropdown-item" href="/user/<%= user.id %>/edit"
             ><i class="fas fa-user-edit"></i> Edit Account</a
-          >
+            >
           <a class="dropdown-item" href="/orders/"
             ><i class="fas fa-pizza-slice"></i> View Orders</a
-          >
+            >
           <div class="dropdown-divider"></div>
           <div class="dropdown-item">
             <form action="/logout?_method=DELETE" method="POST">
               <button class="dropdown-item" type="submit" value="Logout">
-                <i class="fas fa-sign-out-alt"></i> Logout
+              <i class="fas fa-sign-out-alt"></i> Logout
               </button>
             </form>
           </div>
@@ -48,8 +45,8 @@
   </nav>
   <% } else { %>
   <div class="btn-group btn-group-toggle" data-toggle="buttons">
-    <a class="btn btn-sm btn-outline-danger" href="/login">Login</a>
-    <a class="btn btn-sm btn-outline-danger" href="/register">Register</a>
+    <a class="btn btn-sm btn-danger" href="/login">Login</a>
+    <a class="btn btn-sm btn-danger" href="/register">Register</a>
   </div>
   <% } %>
 </div>
@@ -67,98 +64,19 @@
           <div class="row mb-1">
             <div class="col-md-6 px-md-4">
               <div
-                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-              >
+                class="row no-gutters overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary"
-                    >SPECIAL</strong
-                  >
-                  <h4 class="mb-0">Pepperoni</h4>
-                  <div class="mb-1 text-white">Fresh Grown</div>
-                  <p class="card-text mb-3">
-                    Pizza ipsum dolor amet chicago style stuffed crust chicken large meatball pan green bell peppers bbq rib sausage platter.
-                  </p>
-                  <% if(user) { %>
-                  <a
-                    href="/orders/new"
-                    type="button"
-                    class="btn btn-danger btn-lg"
-                    >Launch Order <i class="fas fa-long-arrow-alt-right"></i
-                  ></a>
-                  <% } else { %>
-                  <a href="/login" type="button" class="btn btn-danger btn-lg"
-                    >Launch Order <i class="fas fa-long-arrow-alt-right"></i
-                  ></a>
-                  <% } %>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                  <img
-                    src="../images/pepperoni-pizza-2.jpg"
-                    alt=""
-                    srcset=""
-                    width="300px"
-                    height="250px"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 px-md-4">
-              <div
-                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-              >
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary"
-                    >SPECIAL</strong
-                  >
-                  <h4 class="mb-0">Hawaiian</h4>
-                  <div class="mb-1 text-white">Organic</div>
-                  <p class="card-text mb-3">
-                    Thin crust bacon white pizza, sauteed onions thin crust bbq deep crust ricotta garlic peppers ham bbq sauce.
-                  </p>
-                  <% if(user) { %>
-                  <a
-                    href="/orders/new"
-                    type="button"
-                    class="btn btn-danger btn-lg"
-                    >Launch Order <i class="fas fa-long-arrow-alt-right"></i
-                  ></a>
-                  <% } else { %>
-                  <a href="/login" type="button" class="btn btn-danger btn-lg"
-                    >Launch Order <i class="fas fa-long-arrow-alt-right"></i
-                  ></a>
-                  <% } %>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                  <img
-                    src="../images/hawaiian-pizza.jpg"
-                    alt=""
-                    srcset=""
-                    width="300px"
-                    height="250px"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row mb-1">
-            <div class="col-md-6 px-md-4">
-              <div
-                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-              >
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-danger"
-                    >SPECIAL</strong
-                  >
-                  <h4 class="mb-2">Meat Lover's</h4>
+                  <strong class="d-inline-block mb-2 text-danger">SPECIAL</strong>
+                  <h4 class="mb-2">Hawaiian</h4>
                   <div class="col-auto d-none d-lg-block mb-3">
                     <img
                       class="img-fluid img-thumbnail"
-                      src="../images/meat-lovers-pizza.jpg"
+                      src="../images/hawaiian-pizza.jpg"
                       alt=""
                       srcset=""
-                    />
+                      />
                   </div>
-                  <div class="mb-1 text-white">Fresh</div>
+                  <div class="mb-1 text-white">Tropical</div>
                   <p class="card-text mb-3">
                     Deep crust sausage white garlic extra cheese bacon white pizza bbq sauce black olives sauteed onions.
                   </p>
@@ -166,25 +84,82 @@
                   <a
                     href="/orders/new"
                     type="button"
-                    class="btn btn-danger btn-lg"
-                    >Launch Order <i class="fas fa-long-arrow-alt-right"></i
-                  ></a>
+                    class="btn btn-outline-danger btn-lg"
+                    >Launch Order </a>
                   <% } else { %>
-                  <a href="/login" type="button" class="btn btn-danger btn-lg"
-                    >Launch Order </a> <i class="fas fa-long-arrow-alt-right"></i
-                  ></a>
+                  <a href="/login" type="button" class="btn btn-outline-danger btn-lg">Launch Order </a> </a>
                   <% } %>
                 </div>
               </div>
             </div>
             <div class="col-md-6 px-md-4">
               <div
-                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-              >
+                class="row no-gutters overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-danger"
-                    >SPECIAL</strong
-                  >
+                  <strong class="d-inline-block mb-2 text-danger">SPECIAL</strong
+                    >
+                  <h4 class="mb-2">Pepperoni</h4>
+                  <div class="col-auto d-none d-lg-block mb-3">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="../images/pepperoni-pizza.jpg"
+                      alt=""
+                      srcset=""
+                      />
+                  </div>
+                  <div class="mb-1 text-white">Classic</div>
+                  <p class="card-text mb-3">
+                    Sauteed onions lasagna string cheese, hawaiian sausage onions sausage thin crust.
+                  </p>
+                  <% if(user) { %>
+                  <a
+                    href="/orders/new"
+                    type="button"
+                    class="btn btn-outline-danger btn-lg">Launch Order</a>
+                  <% } else { %>
+                  <a href="/login" type="button" class="btn btn-outline-danger btn-lg">Launch Order </a>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          </div>
+                    <div class="row mb-1">
+            <div class="col-md-6 px-md-4">
+              <div
+                class="row no-gutters overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                  <strong class="d-inline-block mb-2 text-danger">SPECIAL</strong>
+                  <h4 class="mb-2">Meat Lover's</h4>
+                  <div class="col-auto d-none d-lg-block mb-3">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="../images/meat-lovers-pizza.jpg"
+                      alt=""
+                      srcset=""
+                      />
+                  </div>
+                  <div class="mb-1 text-white">Protein</div>
+                  <p class="card-text mb-3">
+                    Deep crust sausage white garlic extra cheese bacon white pizza bbq sauce black olives sauteed onions.
+                  </p>
+                  <% if(user) { %>
+                  <a
+                    href="/orders/new"
+                    type="button"
+                    class="btn btn-outline-danger btn-lg"
+                    >Launch Order </a>
+                  <% } else { %>
+                  <a href="/login" type="button" class="btn btn-outline-danger btn-lg">Launch Order </a> </a>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 px-md-4">
+              <div
+                class="row no-gutters overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                  <strong class="d-inline-block mb-2 text-danger">SPECIAL</strong
+                    >
                   <h4 class="mb-2">Cheese Pizza</h4>
                   <div class="col-auto d-none d-lg-block mb-3">
                     <img
@@ -192,7 +167,7 @@
                       src="../images/cheese-pizza.jpg"
                       alt=""
                       srcset=""
-                    />
+                      />
                   </div>
                   <div class="mb-1 text-white">Delicious</div>
                   <p class="card-text mb-3">
@@ -202,13 +177,9 @@
                   <a
                     href="/orders/new"
                     type="button"
-                    class="btn btn-danger btn-lg"
-                    >Launch Order <i class="fas fa-long-arrow-alt-right"></i
-                  ></a>
+                    class="btn btn-outline-danger btn-lg">Launch Order</a>
                   <% } else { %>
-                  <a href="/login" type="button" class="btn btn-danger btn-lg"
-                    >Launch Order <i class="fas fa-long-arrow-alt-right"></i
-                  ></a>
+                  <a href="/login" type="button" class="btn btn-outline-danger btn-lg">Launch Order </a>
                   <% } %>
                 </div>
               </div>
