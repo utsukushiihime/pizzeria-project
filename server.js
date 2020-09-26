@@ -13,7 +13,7 @@ const controllers = require("./controllers");
 const app = express();
 
 /* Configuration */
-const PORT = 3000;
+// const PORT = 3000;
 
 app.set("view engine", "ejs");
 
@@ -64,6 +64,8 @@ app.use("/user", controllers.user);
 app.use("/orders", authRequired, controllers.order);
 
 /* Server Listener */
-app.listen(PORT, () => {
-  console.log(`Listening for client request on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Listening for client request on port ${PORT}`);
+// } );
+
+app.listen(process.env.PORT || 3000);
