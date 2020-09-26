@@ -71,14 +71,14 @@ Track Order
 ### MVP Pitch
 
 Eating pizza shouldnt be boring. Leave your dull dining experiences behind, and enter into a reality birthed from the combination of Isaac Asimov and Willy Wonka, a world where imaginative culinary science is no longer fiction.
-We are Pizza Planet, your local galactic hub for family fun and some of the best damn pizza in the system. Begin your journey with our app where famished travelers can peruse our menu or build a meal from scratch specific to their liking. Delivery is easy with our fleet of Rocket Drone Delivery Bots who bake your order en route and hand-deliver your order fresh out of the plasma oven. The future is now.
+We are Pizza Planet, your local galactic hub for family fun and some of the best damn pizza in the system. Begin your journey with our app where famished travelers can peruse our menu or build a meal from scratch specific to their liking. Delivery is easy with our fleet of Rocket Drone Delivery Bots who will bake your order en route and hand-deliver your order fresh out of the plasma oven. The future is now.
 
 ---
 
 ### MVP
 
 This will be an application built for a local pizzeria where at its most basic functionality will allow a user to access the app, open a menu to view item options, build and edit an order from menu items, and complete an order purchase whilst simultaneously creating a user profile.
-During checkout, the user will input identification and contact information such as their name, phone, and email which will be their username (address will be optional until the Delivery function is available). They will also create a password before progressing to the payment and final order confirmation page. Each order is assigned an order number which is tagged to the users profile in an archive labeled, Order History which can be referenced by the user. Once an order is purchased, ideally the user will receive an emailed receipt with their order number and purchase summary.
+During checkout, the user will input identification and contact information such as their name, phone, and email which will be their username (address will be optional until the Delivery function is available). They will also create a password before progressing to the payment and final order confirmation page. Each order is assigned an order number which is tagged to the users profile in an archive labeled, Order History which can be referenced by the user. Once an order is purchased, the user will receive an emailed receipt with their order number and purchase summary.
 
 ---
 

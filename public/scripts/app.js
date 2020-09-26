@@ -76,7 +76,6 @@ $(document).ready(function () {
     "Pure Parmesan",
     "Blended Mix",
     "Aorta Special",
-    "Dairy Free",
     "None",
   ];
 
