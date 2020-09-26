@@ -25,6 +25,7 @@
     "express-session": "^1.17.1",
     "method-override": "^3.0.0",
     "mongoose": "^5.10.7",
+    "mongoose-data-seed": "^2.1.6",
     "seed": "^0.4.4",
     "seed-random": "^2.2.0"
   },
