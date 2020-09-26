@@ -20,6 +20,11 @@ mongoose.connection.on("disconnect", (event) => {
   console.log("mongodb disconnected", event);
 });
 
+mongoose.connect(
+  process.env.MONGODB_URI ||
+    "mongodb+srv://admin:n6QHsp438V4f8gK@planet-pizzeria.rauho.mongodb.net/<dbname>?retryWrites=true&w=majority"
+);
+
 module.exports = {
   User: require("./User"),
   Order: require("./Order"),

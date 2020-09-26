@@ -1,3 +1,7 @@
+db = admin
+pass = n6QHsp438V4f8gK
+
+
 ** Planning **
 
 Pizza Planet - Space Theme
@@ -113,3 +117,5 @@ order archive
 
 // Cheese
 // A pizza for the purists. Crust, sauce, cheese, done. 
+
+
