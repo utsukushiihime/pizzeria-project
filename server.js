@@ -33,7 +33,7 @@ app.use(
     secret: "PlanetPizzaPizzeria",
     store: new MongoStore({
       url:
-        "mongodb+srv://admin:n6QHsp438V4f8gK@planet-pizza.rauho.mongodb.net/pizzeria?retryWrites=true&w=majority/",
+        "mongodb+srv://admin:n6QHsp438V4f8gK@planet-pizza.rauho.mongodb.net/pizzeria?retryWrites=true&w=majority/pizzeria-sessions",
     }),
     cookie: {
       maxAge: 1000 * 60 * 60 * 24 * 7 * 2,
