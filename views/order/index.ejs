@@ -38,13 +38,13 @@
                     <th scope="col">Order ID</th>
                     <th scope="col">Order Date</th>
                     <th scope="col">Order Total</th>
-                    <th scope="col">View Order</th>
+                    <th scope="col">Order Details</th>
                   </tr>
                 </thead>
                 <tbody>
                   <% orders.forEach(order => { %>
                   <tr>
-                    <th scope="row">1</th>
+                    <th scope="row"></th>
                     <td><%= order._id %></td>
                     <td><%= order.createdAt %></td>
                     <td>$<%= order.price %>.00</td>
