@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap");
 
 body {
-  background-image: url("../images/stars-bg.gif");
+  background-image: url("/images/stars-bg.gif");
   background-attachment: fixed;
   background-size: cover;
   font-family: "Raleway", sans-serif;

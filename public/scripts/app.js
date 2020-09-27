@@ -1,7 +1,7 @@
 console.log("This is accessible");
 
 // This works with EJS so I am leaving it until I find a better solution
-$(document).ready(function () {
+$(document).on(function () {
   // Size Pricing
   $("select#size").change(function () {
     // set price of item
