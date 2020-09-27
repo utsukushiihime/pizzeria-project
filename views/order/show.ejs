@@ -13,53 +13,87 @@
     </a>
   </h5>
   <nav class="my-2 my-md-0 mr-md-3">
-    <a class="btn btn-danger p-2 text-white" href="/"><i class="fas fa-pizza-slice"></i> Menu</a>
+    <a class="btn btn-danger p-2 text-white" href="/"
+      ><i class="fas fa-pizza-slice"></i> Menu</a
+    >
   </nav>
 </div>
 <!-- END Navigation -->
 
 <main role="main" class="inner cover">
-    <div class="container mt-5">
-      <div class="row">
-        <p class="lead"><h1>Order Details</h1>
-          <h6>Order ID:<span class="text-white"> <%= order._id %></span></h6>
-          
-            <div class="container">
-              <div class="row">
-                <div class="col">  
-                  <div class="badge badge-danger text-wrap text-right mb-4 mt-2" style="width: 6rem;">
-                    Pizza Size
-                  </div> <%= order.size %></div>
-                <div class="col">
-                  <div class="badge badge-primary text-wrap text-right mb-4 mt-2" style="width: 6rem;">
-                    Crust
-                  </div> <%= order.crust %></div>
-                <div class="w-100"></div>
-                <div class="col">
-                  <div class="badge badge-primary text-wrap text-right mb-4 mt-2" style="width: 6rem;">
-                    Sauce
-                  </div> <%= order.sauce %></div>
-                <div class="col">
-                  <div class="badge badge-primary text-wrap text-right mb-4 mt-2" style="width: 6rem;">
-                    Cheese
-                  </div> <%= order.cheese %></div>
-                  <div class="w-100"></div>
-                <div class="col">
-                  <div class="badge badge-primary text-wrap text-right mb-4 mt-2" style="width: 6rem;">
-                    Meat Toppings
-                  </div> <%= order.toppingsMeat %></div>
-                <div class="col">
-                  <div class="badge badge-primary text-wrap text-right mb-4 mt-2" style="width: 6rem;">
-                    Veggie Toppings
-                  </div> <%= order.toppingsVeggie %></div>
-                  
+  <div class="container mt-5">
+    <div class="row">
+      <div class="lead">
+        <h1>Order Details</h1>
+        <h6 class="border-bottom">
+          Order ID:<span class="text-white"> <%= order._id %></span>
+        </h6>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div
+                class="badge badge-danger text-wrap text-right mb-4 mt-2"
+                style="width: 6rem"
+              >
+                Pizza Size
               </div>
+              <%= order.size %>
             </div>
-            <hr>
-            <b>Total</b> 
-            <h2 class="mt-2">$<%= order.price %></h2> 
-        </p>
+            <div class="col">
+              <div
+                class="badge badge-primary text-wrap text-right mb-4 mt-2"
+                style="width: 6rem"
+              >
+                Crust
+              </div>
+              <%= order.crust %>
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+              <div
+                class="badge badge-primary text-wrap text-right mb-4 mt-2"
+                style="width: 6rem"
+              >
+                Sauce
+              </div>
+              <%= order.sauce %>
+            </div>
+            <div class="col">
+              <div
+                class="badge badge-primary text-wrap text-right mb-4 mt-2"
+                style="width: 6rem"
+              >
+                Cheese
+              </div>
+              <%= order.cheese %>
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+              <div
+                class="badge badge-primary text-wrap text-right mb-4 mt-2"
+                style="width: 6rem"
+              >
+                Meat Toppings
+              </div>
+              <%= order.toppingsMeat %>
+            </div>
+            <div class="col">
+              <div
+                class="badge badge-primary text-wrap text-right mb-4 mt-2"
+                style="width: 6rem"
+              >
+                Veggie Toppings
+              </div>
+              <%= order.toppingsVeggie %>
+            </div>
+          </div>
+        </div>
+        <h4 class="border-bottom text-white">Total</h4>
+        <h2 class="mt-2">$<%= order.price %>.00</h2>
+        <a class="btn btn-danger" href="/orders"
+          ><i class="fas fa-angle-left mr-2"></i> Back to Orders</a
+        >
       </div>
     </div>
-  </main>
-
+  </div>
+</main>

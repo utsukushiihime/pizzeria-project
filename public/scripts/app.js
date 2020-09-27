@@ -124,4 +124,6 @@ $(document).ready(function () {
       `<option value="${toppingsVeggie[i]}">${toppingsVeggie[i]}</option>`
     );
   }
+
+  // Order Counter
 });
