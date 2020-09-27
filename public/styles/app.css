@@ -48,7 +48,7 @@ nav a:hover {
 }
 
 .dropdown-menu {
-  background: rgba(34, 34, 34, 0.6);
+  background: rgba(34, 34, 34, 0.85);
 }
 .dropdown-item {
   display: block;
@@ -60,13 +60,13 @@ nav a:hover {
   text-align: inherit;
   text-decoration: none;
   white-space: nowrap;
-  border: 0;
+  border: none;
 }
 
 .dropdown-item:focus,
 .dropdown-item:hover {
-  color: #eeb51c;
-  background-color: #222222;
+  color: #fff;
+  background-color: #bb3628 !important;
 }
 
 .bg-dark {
@@ -114,6 +114,7 @@ nav a:hover {
 .fas {
   font-weight: 900;
   top: 0.1rem;
+  padding: 3px 10px;
   position: relative;
 }
 
@@ -160,9 +161,9 @@ option {
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #a39e9e4b;
-  border: 1px solid #a39e9e4b;
-  border-radius: 0.25rem;
+  background-color: #181d20;
+  border: 3px solid #e8b023;
+  border-radius: 2rem;
   max-width: 100%;
   height: auto;
 }

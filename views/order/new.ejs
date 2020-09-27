@@ -9,11 +9,11 @@
     /></a>
   </h5>
   <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-white" href="/">Menu</a>
     
    
     <div class="btn-group">
       <div class="button-group dropleft">
+        
         <button
           class="btn btn-danger btn-sm dropdown-toggle"
           type="button"
@@ -26,6 +26,9 @@
         <div class="dropdown-menu">
           <a class="dropdown-item" href="/orders/"><i class="fas fa-pizza-slice"></i> View Orders</a>
           <div class="dropdown-divider"></div>
+          <button class="dropdown-item" type="submit" value="Logout">
+              <i class="fas fa-sign-out-alt"></i> Logout
+          </button>
           <div class="dropdown-item">
             <form action="/logout?_method=DELETE" method="POST">
               <button class="dropdown-item" type="submit" value="Logout">
