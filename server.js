@@ -4,6 +4,9 @@ const path = require("path");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
+const { JSDOM } = require("jsdom");
+const { window } = new JSDOM("");
+const $ = require("jquery")(window);
 
 // security
 const rateLimit = require("express-rate-limit");
