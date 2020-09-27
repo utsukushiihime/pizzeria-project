@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap");
 
 body {
   background-image: url("../images/stars-bg.gif");
   background-attachment: fixed;
   background-size: cover;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 1.5rem;
   line-height: 1.75em;
   color: rgba(238, 236, 236, 0.714);
@@ -33,6 +34,13 @@ label {
 a:hover,
 .text-danger {
   color: #bb3628 !important;
+}
+
+p {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.5rem;
 }
 
 nav a:hover {
@@ -126,6 +134,10 @@ select#toppingsVeggie {
   color: rgb(228, 228, 220);
   border-color: transparent;
 }
+select:-internal-list-box:enabled option:checked:enabled:hover {
+  background-color: red !important;
+  color: rgb(16, 16, 16) !important;
+}
 
 select#size,
 select#crust,
@@ -135,6 +147,11 @@ select#cheese {
   color: rgb(228, 228, 220);
   background: rgba(46, 46, 46, 0.65);
   border-color: transparent;
+}
+
+select:-internal-list-box:enabled option:checked:enabled:selected {
+  background: #bb3628;
+  color: rgb(16, 16, 16) !important;
 }
 
 option {
