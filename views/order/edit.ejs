@@ -1,0 +1,66 @@
+<%- include("../partials/header.ejs") %>
+<!-- Navigation -->
+<div
+  class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm"
+>
+  <h5 class="my-0 mr-md-auto font-weight-normal">
+    <a href="/">
+      <img
+        class="img-fluid logo"
+        src="/images/logo-horizontal.png"
+        alt="Pizza Planet"
+      />
+    </a>
+  </h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-white" href="/">Menu</a>
+
+    <div class="btn-group">
+      <div class="button-group dropleft">
+        <button
+          class="btn btn-danger btn-sm dropdown-toggle"
+          type="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          My Account
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/orders/"
+            ><i class="fas fa-pizza-slice"></i> View Orders</a
+          >
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-item">
+            <form action="/logout?_method=DELETE" method="POST">
+              <button class="dropdown-item" type="submit" value="Logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- END Navigation -->
+
+<!-- Main -->
+<div class="main">
+  <div class="container mt-5">
+    <div class="row">
+      <h1>Orders</h1>
+      <ul>
+        <% orders.forEach(order => { %>
+        <li>
+          <a href="/order/<%= order._id %>"><%= order.name %></a>
+          <span> Created at: <%= order.createdAt %> </span>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- END Main -->
+
+<%- include("../partials/footer.ejs") %>

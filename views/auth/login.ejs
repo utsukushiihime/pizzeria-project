@@ -1,0 +1,53 @@
+<!-- Header Partial -->
+<%- include("../partials/header.ejs") %>
+<div class="main">
+  <div class="container mt-5 mx-auto" style="width: 400px">
+    <div class="row text-center">
+      <a href="/">
+        <img
+          class="mb-4"
+          src="/images/logo-stacked.png"
+          alt=""
+          width="340"
+          height="200"
+        />
+      </a>
+      <h1>Welcome Back!</h1>
+      <form action="/login" method="POST">
+        <div class="form-group mt-3">
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            aria-describedby="email"
+            placeholder="Email Address"
+          />
+        </div>
+        <div class="form-group mt-3">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            placeholder="Password"
+          />
+        </div>
+        <div class="form-group pt-3">
+          <button type="submit" class="btn btn-danger btn-block">Login</button>
+          <a
+            type="button"
+            class="btn btn-outline-light mt-4 btn-block"
+            href="/register"
+            >Register</a
+          >
+          <p class="mt-5 mb-3 text-muted">
+            © 1720-<%= new Date().getFullYear();%>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Footer Partial  -->
+<%- include("../partials/footer.ejs") %>

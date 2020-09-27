@@ -1,0 +1,139 @@
+<%- include("../partials/header.ejs") %>
+<!-- Navigation -->
+<div
+  class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm"
+>
+  <h5 class="my-0 mr-md-auto font-weight-normal">
+    <a href="/"
+      ><img class="img-fluid logo" src="/images/logo-horizontal.png" alt=""
+    /></a>
+  </h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-white" href="/">Menu</a>
+    
+   
+    <div class="btn-group">
+      <div class="button-group dropleft">
+        <button
+          class="btn btn-danger btn-sm dropdown-toggle"
+          type="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          My Account
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/orders/"><i class="fas fa-pizza-slice"></i> View Orders</a>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-item">
+            <form action="/logout?_method=DELETE" method="POST">
+              <button class="dropdown-item" type="submit" value="Logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- END Navigation -->
+
+<!-- Main -->
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <h1>Customize Your Pizza</h1>
+
+      <!-- Pizza Customize -->
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <div class="container">          
+              <div class="row mt-3">
+                <!-- Form Start -->
+              <form id="order" action="/orders" method="POST">
+              
+              <!-- Left Column Options -->
+              
+              <div class="form-group">
+              <label for="sizeValues">Select Your Size</label>
+              <select id="size" class="form-control mb-3" name="size">
+                <option value="Make a selection">Make a selection</option>
+              </select>
+
+              <label for="crustValues">Select Your Crust</label>
+              <select id="crust" class="form-control mb-3" name="crust">
+                <option value="Make a selection">Make a selection</option>
+              </select>
+
+              <label for="sauceValues">Select Your Sauce</label>
+              <select id="sauce" class="form-control mb-3" name="sauce">
+                <option value="Make a selection">Make a selection</option>
+              </select>
+ 
+              <label for="cheeseValues">Select Your Cheese</label>
+              <select id="cheese" class="form-control mb-3" name="cheese">
+                <option value="Make a selection">Make a selection</option>
+              </select>
+              </div>
+                </div>
+              </div>
+          </div>
+              <!-- END Left Column Options -->
+
+              <!-- Center Column Options -->
+              <div class="col-4">
+                <div class="container border-left">
+                  <div class="row mt-3">
+                    <div class="form-group mt-3">
+                    <h3>Meat Toppings</h3>
+                    <h6 class="text-lowercase">Select multiple toppings <kbd><kbd>cmd/ctrl</kbd> + <kbd>click</kbd></kbd></h6>
+                      <div class="form-group">
+
+                      <select multiple class="form-control" id="toppingsMeat" name="toppingsMeat">
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            <!-- END Center Column Options -->
+
+            <!-- Right Column Options -->
+              <div class="col-4">
+                <div class="container border-left">
+                  <div class="row mt-3">
+                    <div class="form-group mt-4">
+                    <h3>Veggie Toppings</h3>
+                      <div class="form-group">
+                      <h6 class="text-lowercase">Select multiple toppings <kbd><kbd>cmd/ctrl</kbd> + <kbd>click</kbd></kbd></h6></label>
+                      <select multiple class="form-control" id="toppingsVeggie" name="toppingsVeggie">
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            <!-- END Right Column Options -->
+          </div>
+
+            <div class="container">
+              <div class="row">
+                <div id="price" class="price mb-3">
+                    <input type="text" name="price" value="" hidden>
+                </div>
+              </div>
+            </div>
+             <button type="submit" class="btn btn-danger">Submit</button>
+          </form>
+          <!-- END Form -->
+      </div>
+    <!-- END Pizza Customize -->
+    </div>
+  </div>
+</div>
+<!-- END Main -->
+
+<%- include("../partials/footer.ejs") %>
