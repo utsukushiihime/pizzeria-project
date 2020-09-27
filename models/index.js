@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const connectionString =
-  "mongodb+srv://admin:n6QHsp438V4f8gK@planet-pizza.rauho.mongodb.net/pizzeria?retryWrites=true&w=majority/pizzeria-sessions";
+  "mongodb+srv://admin:n6QHsp438V4f8gK@planet-pizza.rauho.mongodb.net/pizzeria?retryWrites=true&w=majority";
 
 mongoose
   .connect(connectionString, {
