@@ -1,23 +1,23 @@
 const mongoose = require("mongoose");
 
-const connectionString =
-  "mongodb+srv://admin:n6QHsp438V4f8gK@planet-pizza.rauho.mongodb.net/pizzeria?retryWrites=true&w=majority";
+require("dotenv").config(); // use .env file
+const connectionString = process.env.MONGODB_URI;
 
 mongoose
   .connect(connectionString, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
-    useFindAndModify: false,
+    useFindAndModify: true,
   })
-  .then(() => {
-    console.log("Mongodb connected...");
+  .then(function () {
+    console.log("Mongodb connected....");
   })
-  .catch((error) => {
+  .catch(function (error) {
     console.log("Mongodb connection err", error);
   });
 
-mongoose.connection.on("disconnect", (event) => {
+mongoose.connection.on("disconnect", function (event) {
   console.log("mongodb disconnected", event);
 });
 
