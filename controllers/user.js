@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../models");
 const bcrypt = require("bcryptjs");
+const { User, Order } = require("../models");
 
 // index view /users
 router.get("/", async function (req, res) {
   try {
-    const foundUsers = await db.User.find({});
+    const foundUsers = await User.find({});
 
     const context = {
       users: foundUsers,
@@ -25,7 +25,7 @@ router.get("/new", function (req, res) {
 
 // create
 router.post("/", (req, res) => {
-  db.User.create(req.body, (err, createdUser) => {
+  User.create(req.body, (err, createdUser) => {
     if (err) {
       console.log(err);
       return res.send(err);
@@ -37,7 +37,7 @@ router.post("/", (req, res) => {
 
 // show
 router.get("/:id", (req, res) => {
-  db.User.findById(req.params.id)
+  User.findById(req.params.id)
     .populate("orders")
     .exec((err, foundUser) => {
       if (err) {
@@ -51,7 +51,7 @@ router.get("/:id", (req, res) => {
 
 // edit <- view
 router.get("/:id/edit", (req, res) => {
-  db.User.findById(req.params.id, (err, foundUser) => {
+  User.findById(req.params.id, (err, foundUser) => {
     if (err) {
       console.log(err);
       return res.send(err);
@@ -63,7 +63,7 @@ router.get("/:id/edit", (req, res) => {
 
 // update <- db change
 router.put("/:id", (req, res) => {
-  db.User.findByIdAndUpdate(
+  User.findByIdAndUpdate(
     req.params.id,
     req.body,
     { new: true },

@@ -1,7 +1,7 @@
 <%- include("../partials/header.ejs") %>
 <!-- Navigation -->
 <div
-  class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm"
+  class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark shadow-sm"
 >
   <h5 class="my-0 mr-md-auto font-weight-normal">
     <a href="/"
@@ -9,8 +9,6 @@
     /></a>
   </h5>
   <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-white" href="/">Menu</a>
-
     <% if(user) { %>
 
     <div class="btn-group">
@@ -26,6 +24,7 @@
         </button>
 
         <div class="dropdown-menu">
+          <a class="dropdown-item" href="/"><i class="fas fa-user"></i>Menu</a>
           <a class="dropdown-item" href="/user/<%= user.id %>"
             ><i class="fas fa-user"></i> View Account</a
           >
