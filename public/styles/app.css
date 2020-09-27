@@ -150,6 +150,16 @@ option {
   height: auto;
 }
 
+.table > :not(caption) > * > * {
+  padding: 0.75rem 0.75rem;
+  background-color: #343a40a8;
+  background-image: linear-gradient(
+    var(--bs-table-accent-bg),
+    var(--bs-table-accent-bg)
+  );
+  border-bottom-width: 1px;
+}
+
 td {
   font-size: 1rem;
 }
