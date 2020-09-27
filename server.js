@@ -13,7 +13,7 @@ const controllers = require("./controllers");
 const app = express();
 
 /* Configuration */
-const PORT = 3000;
+// const PORT = 3000;
 
 app.set("view engine", "ejs");
 
@@ -32,7 +32,8 @@ app.use(
     saveUninitialized: false,
     secret: "PlanetPizzaPizzeria",
     store: new MongoStore({
-      url: "mongodb://localhost:27017/pizzeria-sessions",
+      url:
+        "mongodb+srv://admin:n6QHsp438V4f8gK@planet-pizza.rauho.mongodb.net/pizzeria?retryWrites=true&w=majority",
     }),
     cookie: {
       maxAge: 1000 * 60 * 60 * 24 * 7 * 2,
@@ -63,4 +64,8 @@ app.use("/user", controllers.user);
 app.use("/orders", authRequired, controllers.order);
 
 /* Server Listener */
+// app.listen(PORT, () => {
+//   console.log(`Listening for client request on port ${PORT}`);
+// } );
+
 app.listen(process.env.PORT || 3000);
