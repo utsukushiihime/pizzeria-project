@@ -9,8 +9,6 @@
     /></a>
   </h5>
   <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-white" href="/">Menu</a>
-
     <% if(user) { %>
 
     <div class="btn-group">
@@ -26,6 +24,7 @@
         </button>
 
         <div class="dropdown-menu">
+          <a class="dropdown-item" href="/"><i class="fas fa-store"></i>Menu</a>
           <a class="dropdown-item" href="/user/<%= user.id %>"
             ><i class="fas fa-user"></i> View Account</a
           >
@@ -199,7 +198,7 @@
                       class="btn btn-danger"
                       href="/user/<%= user.id %>/edit "
                       role="button"
-                      >Edit Account</a
+                      ><i class="fas fa-edit"></i> Edit Account</a
                     >
                   </div>
                 </div>
