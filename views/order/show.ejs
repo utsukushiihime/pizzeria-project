@@ -4,76 +4,42 @@
   <div class="container mt-5">
     <div class="row">
       <div class="lead">
-        <h1>Order Details</h1>
-        <h6 class="border-bottom">
-          Order ID:<span class="text-white"> <%= order._id %></span>
+        <h1 class="text-center">Order Details</h1>
+        <h6 class="text-center border-bottom">
+          Order ID:
+          <p class="text-white"><%= order._id %></p>
         </h6>
-        <div class="container">
+        <div class="container mt-4">
           <div class="row">
             <div class="col">
-              <div class="badge badge-danger text-wrap text-right mb-4 mt-2">
-                Pizza Size
-              </div>
-              <span class="font-weight-bolder text-white"
-                ><%= order.size %></span
-              >
+              <h6 class="text-left mb-0 mt-2">Pizza Size</h6>
+              <p class="font-weight-bolder text-white"><%= order.size %></p>
             </div>
             <div class="col">
-              <div
-                class="badge badge-danger text-wrap text-right mb-4 mt-2"
-                style="width: 6rem"
-              >
-                Crust
-              </div>
-              <span class="font-weight-bolder text-white"
-                ><%= order.crust %></span
-              >
+              <h6 class="text-left mb-0 mt-2">Crust</h6>
+              <p class="font-weight-bolder text-white"><%= order.crust %></p>
             </div>
             <div class="w-100"></div>
             <div class="col">
-              <div
-                class="badge badge-danger text-wrap text-right mb-4 mt-2"
-                style="width: 6rem"
-              >
-                Sauce
-              </div>
-              <span class="font-weight-bolder text-white"
-                ><%= order.sauce %></span
-              >
+              <h6 class="text-left mb-0 mt-2">Sauce</h6>
+              <p class="font-weight-bolder text-white"><%= order.sauce %></p>
             </div>
             <div class="col">
-              <div
-                class="badge badge-danger text-wrap text-right mb-4 mt-2"
-                style="width: 6rem"
-              >
-                Cheese
-              </div>
-              <span class="font-weight-bolder text-white"
-                ><%= order.cheese %></span
-              >
+              <h6 class="text-left mb-0 mt-2">Cheese</h6>
+              <p class="font-weight-bolder text-white"><%= order.cheese %></p>
             </div>
             <div class="w-100"></div>
             <div class="col">
-              <div
-                class="badge badge-danger text-wrap text-right mb-4 mt-2"
-                style="width: 6rem"
-              >
-                Meat Toppings
-              </div>
-              <span class="font-weight-bolder text-white"
-                ><%= order.toppingsMeat %></span
-              >
+              <h6 class="text-left mb-0 mt-2">Meat Toppings</h6>
+              <p class="font-weight-bolder text-white">
+                <%= order.toppingsMeat %>
+              </p>
             </div>
             <div class="col">
-              <div
-                class="badge badge-danger text-wrap text-right mb-4 mt-2"
-                style="width: 6rem"
-              >
-                Veggie Toppings
-              </div>
-              <span class="font-weight-bolder text-white"
-                ><%= order.toppingsVeggie %></span
-              >
+              <h6 class="text-left mb-0 mt-2">Veggie Toppings</h6>
+              <p class="font-weight-bolder text-white">
+                <%= order.toppingsVeggie %>
+              </p>
             </div>
           </div>
         </div>
