@@ -1,7 +1,66 @@
 console.log("This is accessible");
 
+// Select State
+let states = [
+  "AK",
+  "AL",
+  "AR",
+  "AS",
+  "AZ",
+  "CA",
+  "CO",
+  "CT",
+  "DC",
+  "DE",
+  "FL",
+  "GA",
+  "GU",
+  "HI",
+  "IA",
+  "ID",
+  "IL",
+  "IN",
+  "KS",
+  "KY",
+  "LA",
+  "MA",
+  "MD",
+  "ME",
+  "MI",
+  "MN",
+  "MO",
+  "MS",
+  "MT",
+  "NC",
+  "ND",
+  "NE",
+  "NH",
+  "NJ",
+  "NM",
+  "NV",
+  "NY",
+  "OH",
+  "OK",
+  "OR",
+  "PA",
+  "PR",
+  "RI",
+  "SC",
+  "SD",
+  "TN",
+  "TX",
+  "UT",
+  "VA",
+  "VI",
+  "VT",
+  "WA",
+  "WI",
+  "WV",
+  "WY",
+];
+
 // Size Pricing
-$("select#size").change(function () {
+$("select#size").on("change", function () {
   // set price of item
 
   // set price by value selected
@@ -10,6 +69,7 @@ $("select#size").change(function () {
   if (sizeValues === "Rocket Slice") {
     let price = 8;
     let priceVal = parseInt(price);
+    console.log(sizeValues, priceVal);
 
     $("input:hidden").val(`${priceVal}`);
   } else if (sizeValues === "Frisbee") {
@@ -122,3 +182,14 @@ for (let i = 0; i < toppingsVeggie.length; i++) {
     `<option value="${toppingsVeggie[i]}">${toppingsVeggie[i]}</option>`
   );
 }
+
+	//Navigation Menu Slider
+	$("#nav-expander").on("click", function (e) {
+		e.preventDefault();
+		$("body").toggleClass("nav-expanded");
+	});
+	$("#nav-close").on("click", function (e) {
+		e.preventDefault();
+		$("body").removeClass("nav-expanded");
+	});
+

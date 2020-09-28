@@ -4,16 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="Description" content="Planet Pizza Pizzeria - MongoDB, Express.js, Node.js App" />
+    <meta
+      name="Description"
+      content="Planet Pizza Pizzeria - MongoDB, Express.js, Node.js App"
+      />
     <script src="/scripts/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="/styles/bootstrap.min.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
+      />
     <link rel="stylesheet" href="/styles/app.css" />
     <script src="/scripts/app.js" defer></script>
     <title>Planet Pizza - Pizzeria</title>
   </head>
   <body>
-</html>
+    <nav>
+      <ul class="list-unstyled main-menu">
+        <!-- Navigation -->
+        <li class="text-right"><a href="#" id="nav-close">X</a></li>
+        <li>
+          <a href="/orders/new"> Order Now<span class="icon"><i class="fas fa-pizza-slice"></i></a>
+        </li>
+        <% if (user) { %>
+        <li>
+          <a href="/user/<%= user.id %> "">My Account <span class="icon"><i class="fas fa-user-circle"></i></a>
+        </li>
+        <li>
+          <a href="/orders/">View Orders <span class="icon"><i class="fas fa-shopping-cart"></i></a>
+        </li>
+        <li>
+          <form action="/logout?_method=DELETE" method="POST">
+            <button class="btn btn-clear" type="submit" value="Logout">
+            Logout  <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+            </button>
+          </form>
+        </li>
+        <% } else { %>
+        <li>
+          <a href="/login">Login <span class="icon"><i class="fas fa-sign-in-alt"></i></a>
+        </li>
+        <li>
+          <a href="/register">Register <span class="icon"><i class="fas fa-user-plus"></i></a>
+        </li>
+        <% } %>
+      </ul>
+    </nav>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <a class="navbar-brand" href="/">      
+      <img
+        class="img-fluid logo"
+        src="/images/logo-horizontal.png"
+        alt="Pizza Planet"
+        />
+
+      </a>
+      <div class="navbar-header pull-right">
+        <a id="nav-expander" class="nav-expander fixed">
+        MENU &nbsp;<i class="fa fa-bars fa-lg white"></i>
+        </a>
+      </div>
+    </div>
+    <!-- END Navigtion -->
