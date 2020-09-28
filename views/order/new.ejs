@@ -1,46 +1,7 @@
 <%- include("../partials/header.ejs") %>
-<!-- Navigation -->
-<div
-  class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark shadow-sm"
->
-  <h5 class="my-0 mr-md-auto font-weight-normal">
-    <a href="/"
-      ><img class="img-fluid logo" src="/images/logo-horizontal.png" alt=""
-    /></a>
-  </h5>
-  <nav class="my-2 my-md-0 mr-md-3">
-    
-   
-    <div class="btn-group">
-      <div class="button-group dropleft">
-        
-        <button
-          class="btn btn-danger btn-sm dropdown-toggle"
-          type="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          My Account
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="/orders/"><i class="fas fa-pizza-slice"></i> View Orders</a>
-          <div class="dropdown-divider"></div>
-          <div class="dropdown-item">
-            <form action="/logout?_method=DELETE" method="POST">
-              <button class="dropdown-item" type="submit" value="Logout">
-                <i class="fas fa-sign-out-alt"></i> Logout
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-</div>
-<!-- END Navigation -->
 
 <!-- Main -->
+
 <div class="main">
   <div class="container mt-5">
     <div class="row">
@@ -56,7 +17,6 @@
               <form id="order" action="/orders" method="POST">
               
               <!-- Left Column Options -->
-              
               <div class="form-group">
               <label for="sizeValues">Select Your Size</label>
               <select id="size" class="form-control mb-3" name="size">
@@ -108,7 +68,7 @@
                     <div class="form-group mt-4">
                     <h3>Veggie Toppings</h3>
                       <div class="form-group">
-                      <h6 class="text-lowercase">Select multiple toppings <kbd><kbd>cmd/ctrl</kbd> + <kbd>click</kbd></kbd></h6></label>
+                      <h6 class="text-lowercase">Select multiple toppings <kbd><kbd>cmd/ctrl</kbd> + <kbd>click</kbd></kbd></h6>
                       <select multiple class="form-control" id="toppingsVeggie" name="toppingsVeggie">
                       </select>
                     </div>
