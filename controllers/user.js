@@ -72,7 +72,6 @@ router.put("/:id", (req, res) => {
         console.log(err);
         return res.send(err);
       }
-
       res.redirect(`/user/${updatedUser._id}`);
     }
   );
