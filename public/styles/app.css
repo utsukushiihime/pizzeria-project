@@ -188,10 +188,21 @@ option {
   max-width: 100%;
   height: auto;
 }
+.table-dark {
+  --bs-table-bg: #343a40;
+  --bs-table-striped-bg: #6c757d57;
+  --bs-table-striped-color: #fff;
+  --bs-table-active-bg: #010506;
+  --bs-table-active-color: #fff;
+  --bs-table-hover-bg: #43494e;
+  --bs-table-hover-color: #fff;
+  color: #fff;
+  border-color: #484e53;
+}
 
 .table > :not(caption) > * > * {
   padding: 0.75rem 0.75rem;
-  background-color: #343a40a8;
+  background-color: #343a405e;
   background-image: linear-gradient(
     var(--bs-table-accent-bg),
     var(--bs-table-accent-bg)
@@ -246,7 +257,7 @@ a.nav-expander.fixed {
 }
 
 nav {
-  background: #2d2f33;
+  background: #030b0ff7;
   display: block;
   height: 100%;
   overflow: auto;
@@ -298,7 +309,7 @@ body.nav-expanded {
 }
 
 .main-menu li {
-  border-bottom: 1px solid #323949;
+  border-bottom: 1px solid #222;
   margin-left: 20px;
   font-size: 18px;
   padding: 12px;
@@ -317,33 +328,6 @@ body.nav-expanded {
 .main-menu li .sub-nav {
   border-bottom: 0px;
   padding: 4px;
-}
-
-.main-menu a .caret {
-  width: 0;
-  height: 0;
-  display: inline-block;
-  vertical-align: top;
-  border-top: 4px solid #4f5963;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
-  content: "";
-  margin-top: 8px;
-}
-
-.main-menu a:hover .caret {
-  border-top-color: #4f5963;
-}
-
-.main-menu li.open > a > .caret {
-  border-top: none;
-  border-bottom: 4px solid #4f5963;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
-}
-
-.main-menu li.open > a:hover > .caret {
-  border-bottom-color: #4f5963;
 }
 
 .icon:before {
