@@ -30,7 +30,7 @@
     "font-awesome": "^4.7.0",
     "helmet": "^4.1.1",
     "jquery": "^3.5.1",
-    "jsdom": "^16.4.0",
+    "jsdom": "^16.5.0",
     "method-override": "^3.0.0",
     "mongoose": "^5.10.7",
     "mongoose-data-seed": "^2.1.6",
