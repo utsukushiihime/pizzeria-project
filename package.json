@@ -32,7 +32,7 @@
     "jquery": "^3.5.1",
     "jsdom": "^16.5.0",
     "method-override": "^3.0.0",
-    "mongoose": "^5.10.7",
+    "mongoose": "^5.13.15",
     "mongoose-data-seed": "^2.1.6",
     "mongoose-morgan": "^1.0.16"
   },
